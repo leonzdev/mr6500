@@ -31,7 +31,7 @@ Chipset Qualcomm® Snapdragon™ X65 5G Modem-RF System
 3G Bands 1/2/5/8
 ```
 
-[ATT variant](https://www.netgear.com/home/mobile-wifi/hotspots/mr6500/)https://www.netgear.com/home/mobile-wifi/hotspots/mr6500/ MR6500-1A1NAS
+[ATT variant](https://www.netgear.com/home/mobile-wifi/hotspots/mr6500/) MR6500-1A1NAS
 FCC ID: PY321100529
 
 ## Access
