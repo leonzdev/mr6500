@@ -35,9 +35,13 @@ Chipset Qualcomm® Snapdragon™ X65 5G Modem-RF System
 FCC ID: PY321100529
 
 ## Access
+Console access can be enabled in addition to the touch screen and webui.
+
+
 Port 5510 is open with telnet access for AT commands. Commands are pretty standard across recent Netgear cellular routers: https://github.com/0xBAADF0OD/netgear_mr6400/blob/main/netgear-AT-commands/README.md
 
-**With old version of firmware (10.x)** port 23 can be opened with telnet for a root shell.
+
+**On old firmwares (10.x)** port 23 can be opened with telnet for a root shell.
 
 ## Firmware
 ATT variant on new (12.x) firmwares have many functionalities locked down, such as: root shell via telnet, ability to SIM unlock, etc. Downgrading to 10.x is also blocked.
