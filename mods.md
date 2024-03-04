@@ -1,13 +1,13 @@
-* A list of planned / completed mods
-# Persavations
+# A list of planned / completed mods
+## Persavations
 No one wants to lose root access. Things to perserve
 * Firmware version. Meaning - disable auto update
 * Root telnet
 
-# SSH
+## SSH
 
-# Band expansion
+## Band expansion
 
-# TTL
+## TTL
 This is trivial
 
