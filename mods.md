@@ -27,6 +27,8 @@ dx -c Oma.DMAccountServerAddress1 ""
 ```
 
 ## SSH
+Get a static linking build from https://github.com/binary-manu/static-cross-openssh
+
 
 ## Band expansion
 
