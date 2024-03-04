@@ -73,3 +73,5 @@ Follow instructions from https://github.com/binary-manu/static-cross-openssh, do
     total 4
     -rw-r--r--    1 root     root           608 Jan  6 02:10 authorized_keys
     ```
+1. Create `sshd.service`
+
