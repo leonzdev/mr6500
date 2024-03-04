@@ -18,7 +18,11 @@ Follow instructions from https://github.com/binary-manu/static-cross-openssh, do
 
    Need the following files: `sshd`, `sftp-server`, `sftp`, `scp`, `ssh-keygen`
 
-   The artifacts from `static-cross-openssh` use `/opt/openssh` as its base directory. Put files in `/opt/openssh` to avoid troubles
+   Put `sftp`, `scp` in `PATH`
+
+   Put `sshd`, `sftp-server` where you like
+
+   The artifacts from `static-cross-openssh` use `/opt/openssh` as its base directory. Put config files in `/opt/openssh` to avoid troubles
     ```bash
     bash-3.2# ls /opt/openssh/
     bin      etc      libexec  var
