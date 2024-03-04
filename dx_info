@@ -1,0 +1,5348 @@
+
+
+GROUP: DataEngine
+DataEngine.item - Prints the name of a DX Item enum: dx dataengine.item -t <number>
+type: string
+security: OEM
+nv: none
+
+DataEngine.genables - Prints all group names and enable flags
+type: string
+security: OEM
+nv: none
+
+DataEngine.galiases - Prints alias - actual name pairs for groups with an alias: <aliasname><space><actualname><comma><space>
+type: string
+security: OEM
+nv: none
+
+DataEngine.ialiases - Prints alias - actual name pairs for items with an alias: <aliasname><space><actualname><comma><space>
+type: string
+security: OEM
+nv: none
+
+DataEngine.gidnames - Prints a group's item names: dx dataengine.gidnames -t <group>
+type: string
+security: OEM
+nv: none
+
+DataEngine.maxbacklog - Largest backlog
+type: uint
+security: High
+nv: none
+
+DataEngine.snotify - Generates a 1-shot status notification: dx -c dataengine.snotify -t <group.item> <notify_integer>
+type: uint
+security: High
+nv: none
+
+DataEngine.itemstats - Prints DX item's statistics: dx dataengine.itemstats -t <group.item>
+type: string
+security: High
+nv: none
+
+DataEngine.clearstats - Clear all DX statistics
+type: uint
+security: High
+nv: none
+
+DataEngine.mmstats - Print MM statistics
+type: string
+security: High
+nv: none
+
+DataEngine.pid - Prints swiapp process id: dx dataengine.pid -t <group.item>
+type: int
+security: OEM
+nv: none
+
+DataEngine.remcache - Remote cache notify
+type: int
+security: High
+nv: none
+
+DataEngine.cacheginv - Remote-cache group invalidate: dx dataengine.cacheginv <group#>
+type: uint
+security: High
+nv: none
+
+DataEngine.cacheidinv - Remote-cache group invalidate: dx dataengine.cacheginv <group#>
+type: uint
+security: High
+nv: none
+
+DataEngine.dxready - DX-framework Ready (-1=not ready, 0=ready, 1+ = ready (count of remote processor restarts))
+type: int
+security: OEM
+nv: none
+
+
+
+GROUP: Battery
+Battery.BatStatus - Status
+type: enum - DeviceReady Charging ChargeDone Boosting GenericFault
+security: OEM
+nv: none
+
+Battery.BatMgrMode - Battery Manager's mode
+type: enum - Disable AC USB Auto Wireless QuickCharge CDP
+security: High
+nv: BATMODE, apps
+
+Battery.BatChgState - UI's Charging flag
+type: bool
+security: OEM
+nv: none
+
+Battery.BatChgSrc - swiapp charging source
+type: enum - None AC USB Auto Wireless QuickCharge CDP
+security: OEM
+nv: none
+
+Battery.BatChgSrcInt - Driver's charging source
+type: string
+security: OEM
+nv: none
+
+Battery.BatState - Battery state
+type: enum - NoBattery Critical Low Normal Unknown
+security: OEM
+nv: none
+
+Battery.BatPercent - UI's Percent Charged
+type: uint
+security: OEM
+nv: none
+
+Battery.BatLowThresh - Low-battery threshold (percent)
+type: uint
+security: OEM
+nv: BATLOWTHRES, apps
+
+Battery.BatCritThresh - Critical-battery threshold (voltage)
+type: uint
+security: High
+nv: BATT_CRITICAL_VOLTAGE, apps
+
+Battery.BatGaugeState - Gauge Status
+type: enum - Ready NoBattery Fault NoSupport
+security: High
+nv: none
+
+Battery.BatChgStateInt - Driver's Charging flag
+type: bool
+security: High
+nv: none
+
+Battery.BatPercentInt - Driver's Percent Charged
+type: uint
+security: High
+nv: none
+
+Battery.BatSupport - Supported Batteries
+type: string
+security: OEM
+nv: none
+
+Battery.BatId - Battery Id
+type: uint
+security: OEM
+nv: none
+
+Battery.BatName - Battery Name
+type: string
+security: OEM
+nv: none
+
+Battery.BatAlertLevCrit - Alert - Critical Charge Level
+type: uint
+security: OEM
+nv: none
+
+Battery.BatLevRechgNorm - Norm temperature recharge percent level
+type: int
+security: High
+nv: BATT_LEVRECHG_NORM, apps
+
+
+
+GROUP: BatAdv
+BatAdv.BatChgEnable - Charger enable (1=supplying power)
+type: bool
+security: High
+nv: none
+
+BatAdv.BatChgAlgo - Charging algorithm in use (enum)
+type: enum - Normal ReduceStress Heat GaugeMaintenance
+security: High
+nv: none
+
+BatAdv.BatChgType - Battery Charge Type
+type: string
+security: High
+nv: none
+
+BatAdv.BatChgVolt - Charger's output voltage
+type: uint
+security: High
+nv: none
+
+BatAdv.BatVoltage - Battery Voltage (mV)
+type: uint
+security: High
+nv: none
+
+BatAdv.BatCurrent - Battery Current (mA)
+type: int
+security: High
+nv: none
+
+BatAdv.BatChgCurrLim - Charger's output current-limit
+type: uint
+security: High
+nv: none
+
+BatAdv.UsbVoltage - USB Voltage (mV)
+type: uint
+security: High
+nv: none
+
+BatAdv.UsbCurrent - USB Current (mA)
+type: int
+security: High
+nv: none
+
+BatAdv.UsbCurrentLim - USB Current Limit (mA)
+type: uint
+security: High
+nv: none
+
+BatAdv.BatITerm - Charger current termination (mA)
+type: uint
+security: High
+nv: none
+
+BatAdv.BatChgStatus - Battery charger status and faults
+type: string
+security: High
+nv: none
+
+BatAdv.BatChgRegs - Subset of SMBdump status charger registers
+type: string
+security: High
+nv: none
+
+BatAdv.GaugeCapacity - Fuel Gauge capacity (mAh)
+type: uint
+security: High
+nv: none
+
+BatAdv.GaugeTest - Fuel Gauge test          
+type: uint
+security: High
+nv: none
+
+BatAdv.BatStressVoltage - Max voltage during Reduce Stress algorithm
+type: uint
+security: High
+nv: BATT_STRESS_VOLTAGE, apps
+
+BatAdv.BatStressPeriod - Continuous days of charging until Reduce Stress algorithm begins, set to 0 to disable the algorithm
+type: uint
+security: High
+nv: BATT_STRESS_DELAYDAYS, apps
+
+BatAdv.BatMaintPeriod - Continious days of charging until Gauge Maintenance algorithm begins, set to 0 to disable the algorithm.
+type: uint
+security: High
+nv: BATT_MAINT_DELAYDAYS, apps
+
+
+
+GROUP: BatTest
+BatTest.TestChgSrc - Battery Test charging source
+type: enum - None AC USB Auto Wireless QuickCharge CDP Disabled
+security: OEM
+nv: none
+
+BatTest.TestTemp - Battery Test Temperature
+type: uint
+security: High
+nv: none
+
+BatTest.TestVolt - Battery Test Voltage
+type: uint
+security: High
+nv: none
+
+BatTest.TestCurrent - Battery Test Current
+type: uint
+security: High
+nv: none
+
+BatTest.TestPercent - Battery Test Charge percent
+type: uint
+security: High
+nv: none
+
+BatTest.TestBatteryID - Battery Test Battery ID 
+type: uint
+security: High
+nv: none
+
+BatTest.StressDayLen - Number of seconds in a day used by reduce stress algorithm in bxtask
+type: int
+security: High
+nv: BATT_STRESS_DAYLEN, apps
+
+BatTest.StressTimer - Reduce stress timer, seconds passed since last day/reset
+type: uint
+security: High
+nv: none
+
+BatTest.MaintTimer - Gauge maintenance timer, seconds passed since last reset.
+type: uint
+security: High
+nv: none
+
+
+
+GROUP: BatMetrics
+BatMetrics.Clear - Discard old data
+type: string
+security: High
+nv: none
+
+BatMetrics.Unsup_ID - Total number of power-ons with unsupported battery ID
+type: int
+security: High
+nv: BATT_UNSUPTIDPWRON, apps
+
+BatMetrics.NoBatt_ID - Total number of power-ons with no battery inserted
+type: int
+security: High
+nv: BATT_NOBATTPWRON, apps
+
+BatMetrics.10K_ID - Total number of power-ons with 10K battery inserted
+type: int
+security: High
+nv: BATT_10K_ID, apps
+
+BatMetrics.36K_ID - Total number of power-ons with 36K battery inserted
+type: int
+security: High
+nv: BATT_36K_ID, apps
+
+BatMetrics.65K_ID - Total number of power-ons with 65K battery inserted
+type: int
+security: High
+nv: BATT_65K_ID, apps
+
+BatMetrics.113K_ID - Total number of power-ons with 113K battery inserted
+type: int
+security: High
+nv: BATT_113K_ID, apps
+
+BatMetrics.200K_ID - Total number of power-ons with 200K battery inserted
+type: int
+security: High
+nv: BATT_200K_ID, apps
+
+BatMetrics.357K_ID - Total number of power-ons with 357K battery inserted
+type: int
+security: High
+nv: BATT_357K_ID, apps
+
+BatMetrics.866K_ID - Total number of power-ons with 866K battery inserted
+type: int
+security: High
+nv: BATT_866K_ID, apps
+
+BatMetrics.GaugeCal - Total number of gauge calibrations
+type: int
+security: High
+nv: BATT_GAUGECAL, apps
+
+BatMetrics.LowPowerOff - Total number of power downs due to low battery
+type: int
+security: High
+nv: BATT_LOWPOWEROFF, apps
+
+BatMetrics.LowPowerOn - Total number of power ons while low battery
+type: int
+security: High
+nv: BATT_LOWPOWERON, apps
+
+BatMetrics.LowPowerOnUSB - Total number of power ons on USB while low battery
+type: int
+security: High
+nv: BATT_LOWPOWERONUSB, apps
+
+BatMetrics.Restart - Total number of power ons
+type: int
+security: High
+nv: BATT_RESTART, apps
+
+BatMetrics.RestartSwiapp - Total number of swiapp restarts
+type: int
+security: High
+nv: BATT_RESTARTSWIAPP, apps
+
+BatMetrics.PowerAC - Total number of AC power plugins
+type: int
+security: High
+nv: BATT_POWERAC, apps
+
+BatMetrics.PowerUSB - Total number of USB power plugins
+type: int
+security: High
+nv: BATT_POWERUSB, apps
+
+BatMetrics.ChgTerminate - Total number of charge terminations
+type: int
+security: High
+nv: BATT_CHGTERMINATE, apps
+
+BatMetrics.Z1entryTooCold - Total number of the temperature is too cold
+type: int
+security: High
+nv: BATT_ENTRYTOOCOLD, apps
+
+BatMetrics.Z2entryNormal - Total number of the temperature is normal
+type: int
+security: High
+nv: BATT_ENTRYTNORMAL, apps
+
+BatMetrics.Z3entryTooHot - Total number of the temperature is too hot
+type: int
+security: High
+nv: BATT_ENTRYTOOHOT, apps
+
+BatMetrics.Z4entryCritical - Total number of the temperature is critical
+type: int
+security: High
+nv: BATT_ENTRYTCRITICAL, apps
+
+BatMetrics.Z1FWentryTooCold - Total number of entries into firmware too cold zone
+type: int
+security: High
+nv: BATT_FW_ENTRYTOOCOLD, apps
+
+BatMetrics.Z2FWentryNormal - Total number of entries into firmware normal zone
+type: int
+security: High
+nv: BATT_FW_ENTRYTNORMAL, apps
+
+BatMetrics.Z3FWentryTooHot - Total number of entries into firmware too hot zone
+type: int
+security: High
+nv: BATT_FW_ENTRYTOOHOT, apps
+
+BatMetrics.Z4FWentryCritical - Total number of entries into firmware critical zone
+type: int
+security: High
+nv: BATT_FW_ENTRYTCRITICAL, apps
+
+BatMetrics.MinTemp - Min Temperature of Battery
+type: int
+security: High
+nv: BATT_MINTEMP, apps
+
+BatMetrics.MaxTemp - Max Temperature of Battery
+type: int
+security: High
+nv: BATT_MAXTEMP, apps
+
+BatMetrics.AverageTempDay - Average Temperature of Battery over last 24h. Write 0 to clear last 24 hours of data.
+type: int
+security: High
+nv: none
+
+BatMetrics.AverageTempWeek - Average Temperature of Battery over last week. Write 0 to clear last 30 days of data.
+type: int
+security: High
+nv: none
+
+BatMetrics.AverageTempMonth - Average Temperature of Battery over last month. Write 0 to clear last 30 days of data.
+type: int
+security: High
+nv: none
+
+BatMetrics.StressDischarge - Total number of times battery stress discharge was completed
+type: int
+security: High
+nv: BATT_DISCHARGE_STRESS, apps
+
+BatMetrics.MaintDischarge - Total number of gauge maintenance cycles started
+type: int
+security: High
+nv: BATT_MAINT_DISCHARGE, apps
+
+BatMetrics.CurrMax - Max positive battery current
+type: int
+security: High
+nv: BATT_MAXCURR, apps
+
+BatMetrics.CurrMin - Min negative battery current
+type: int
+security: High
+nv: BATT_MINCURR, apps
+
+BatMetrics.CurrDeficit - Battery's current drain while charging by USB/AC
+type: int
+security: High
+nv: BATT_CURRDEFICIT, apps
+
+BatMetrics.ResetReasonHistory - History of power.ResetReason
+type: string
+security: High
+nv: none
+
+
+
+GROUP: BatTemperature
+BatTemperature.BatTemp - Battery Temperature
+type: uint
+security: OEM
+nv: none
+
+BatTemperature.BatTempState - Battery Temperature state
+type: enum - NoBattery Normal TooCold Cool TooHot Critical
+security: OEM
+nv: none
+
+BatTemperature.BatChgTempState - Charger's view of battery temperature state
+type: enum - NoBattery Normal TooCold Cool TooHot Critical
+security: OEM
+nv: none
+
+BatTemperature.BatCritTemp - Battery critical temperature
+type: uint
+security: Low
+nv: BATT_TEMP_CRITICAL, apps
+
+BatTemperature.BatHotTemp - Battery hot temperature
+type: uint
+security: Low
+nv: BATT_TEMP_HOT, apps
+
+BatTemperature.BatColdTemp - Battery cold temperature
+type: uint
+security: Low
+nv: BATT_TEMP_COLD, apps
+
+BatTemperature.BatTempAdc - Battery Temperature (ADC reading)
+type: uint
+security: High
+nv: none
+
+
+
+GROUP: General
+General.SysAlert - System Alerts
+<id #>,<active flag>,<timestamp>,<description>
+type: buffer
+security: OEM
+nv: none
+
+General.Manufacturer - Device Manufacturer
+type: string
+security: OEM
+nv: none
+
+General.Model - Device Model
+type: string
+security: OEM
+nv: none
+
+General.DeviceName - Device Name
+type: string
+security: OEM
+nv: DEVICENAME, apps
+
+General.CurrentTime - Current Time (since Jan 6th 1980)
+type: uint
+security: OEM
+nv: none
+
+General.TimeZoneOffset - Time zone offset
+type: int
+security: OEM
+nv: none
+
+General.TruInstallAvailable - TRU_Install Available
+type: bool
+security: OEM
+nv: none
+
+General.TruInstallSupported - TRU_Install Supported
+type: bool
+security: Low
+nv: TRUINSTALL_SUPPORTED, apps
+
+General.TruInstallEnabled - TRU_Install Enabled
+type: bool
+security: OEM
+nv: TRUINSTALL_ENABLED, apps
+
+General.TruInstallVersion - TRU_Install Version
+type: string
+security: OEM
+nv: none
+
+General.TruInstallStart - TRU_Install Start
+type: bool
+security: OEM
+nv: none
+
+General.HIDSupported - HID mode Supported
+type: bool
+security: Low
+nv: HID_SUPPORTED, apps
+
+General.HIDEnabled - HID mode Enabled
+type: bool
+security: OEM
+nv: HID_ENABLED, apps
+
+General.DeviceTemperature - Device Temperature
+type: int
+security: OEM
+nv: none
+
+General.Events - System Events
+type: uint
+security: OEM
+nv: none
+
+General.DeviceStorage - External APP Storage
+type: string
+security: High
+nv: DEVICE_STORAGE, apps
+
+General.UsbPeripheralEnumeration - USB Enumeration TYPE
+type: enum - None HID SWOC Modem
+security: OEM
+nv: none
+
+General.SPCUnlock - User input SPC code
+type: uint
+security: OEM
+nv: none
+
+General.SPCLockStatus - Status reporting during SPC unlock
+type: enum - NoRequest SPCLocked SPCUnlocked MaxSPCRetryReached
+security: OEM
+nv: none
+
+General.SPCLock - Re-lock SPC
+type: uint
+security: OEM
+nv: none
+
+General.HideAdminPassword - Hide Admin Password
+type: bool
+security: Low
+nv: HIDE_ADMIN_PASSWORD, apps
+
+General.RNDIS6State - RNDIS6 State
+type: bool
+security: OEM
+nv: RNDIS6, modem
+
+
+
+GROUP: Versions
+Versions.PartNumber - Part Number
+type: string
+security: OEM
+nv: NTGR_NVPRIID, apps
+
+Versions.PriVersion - PRI Version
+type: string
+security: OEM
+nv: NVPRIID, apps
+
+Versions.Imei - IMEI
+type: string
+security: OEM
+nv: none
+
+Versions.Fsn - FSN
+type: string
+security: OEM
+nv: FSN, modem
+
+Versions.HardwareRev - H/W Revision
+type: string
+security: OEM
+nv: none
+
+Versions.FirmwareRev - Firmware Revision
+type: string
+security: OEM
+nv: none
+
+Versions.FirmwareFsysRev - non-hlos image version
+type: string
+security: OEM
+nv: none
+
+Versions.FirmwareDate - Firmware Date
+type: string
+security: OEM
+nv: none
+
+Versions.ModemFwVersion - Modem FW Version
+type: string
+security: OEM
+nv: none
+
+Versions.BootLoaderRev - Boot Loader Revision
+type: string
+security: OEM
+nv: none
+
+Versions.WebAppVersion - WebUI Version
+type: string
+security: OEM
+nv: none
+
+Versions.PackageName - Package Name
+type: string
+security: OEM
+nv: IDS_PACKAGENAME, apps
+
+Versions.WinFWID - Window Firmware ID
+type: buffer
+security: OEM
+nv: FWID_GUID, apps
+
+Versions.AppKernelVersion - App Kernel Version
+type: string
+security: OEM
+nv: none
+
+Versions.AppVersion - App Version
+type: string
+security: OEM
+nv: none
+
+Versions.ProductSKU - Product SKU
+type: string
+security: OEM
+nv: NTGR_PRODUCT_SKU, apps
+
+Versions.PriCarrierPN - Carrier sheet part number
+type: string
+security: OEM
+nv: PRI_CARRIER, apps
+
+Versions.PriCarrierVer - Carrier sheet revision number
+type: string
+security: OEM
+nv: PRI_CARRIER, apps
+
+Versions.Esn - Electronic Serial Number
+type: uint
+security: OEM
+nv: 0, modem
+
+Versions.Meid - Mobile Equipment Identifier
+type: string
+security: OEM
+nv: none
+
+Versions.SVN - SVN
+type: string
+security: OEM
+nv: none
+
+Versions.BrandID - Brand ID
+type: string
+security: Low
+nv: IDS_BRAND_ALPHA_I, apps
+
+Versions.Checksum - Checksum
+type: string
+security: High
+nv: none
+
+Versions.ChecksumModem - Checksum for Modem
+type: string
+security: High
+nv: none
+
+
+
+GROUP: Reset
+Reset.FactoryReset - Factory Reset
+type: uint
+security: OEM
+nv: none
+
+Reset.FactoryResetStatus - Factory Reset Status
+type: uint
+security: OEM
+nv: none
+
+Reset.FactoryResetButtonEnabled - Factory Reset Button Enabled
+type: bool
+security: OEM
+nv: FACTORY_RESET_BUTTON_ENABLED, apps
+
+Reset.FactoryResetLCDSupported - Factory Reset LCD Supported
+type: bool
+security: OEM
+nv: FACTORY_RST_LCD_SUPPORTED, apps
+
+Reset.RTNResetSet - RTN Reset Performed
+type: bool
+security: OEM
+nv: RTN_FLAG, apps
+
+Reset.RTNResetDate - RTN Reset Date
+type: string
+security: OEM
+nv: RTN_DATE, apps
+
+Reset.RTNReset - Same as factory reset but with SPC checking
+type: uint
+security: OEM
+nv: none
+
+Reset.SCRTN - NV restore on modem configuration/programming
+type: uint
+security: OEM
+nv: none
+
+Reset.RouterReset - NV restore on Hotspot factory settings only [not radios]
+type: uint
+security: OEM
+nv: none
+
+Reset.GenericResetStatus - Shared generic status for RTN, SCRTN and Router reset
+type: enum - NoRequest InProgress DoneOK DoneError
+security: OEM
+nv: none
+
+Reset.ResetEnabled - Reset Enabled
+type: bool
+security: High
+nv: RESET_ENABLED, apps
+
+Reset.VerifyFactoryReset - Verify Factory Reset
+type: uint
+security: OEM
+nv: none
+
+Reset.VerifyFactoryResetStatus - Verify Factory Reset Status
+type: enum - NoRequest InProgress DoneOK DoneError
+security: OEM
+nv: none
+
+
+
+GROUP: Network
+Network.Ipv6Supported - Ipv6 Supported
+type: bool
+security: High
+nv: IPV6_ENABLED, apps
+
+Network.Ipv6FirewallBlackList - Ipv6 Firewall Black List
+type: buffer
+security: High
+nv: IPV6_FIREWALL_BLACK_LIST
+
+Network.Ipv6FirewallWhiteList - Ipv6 Firewall White List
+type: buffer
+security: High
+nv: IPV6_FIREWALL_WHITE_LIST
+
+Network.IPPassThroughEnabled - IP Pass Through is enabled
+type: uint
+security: OEM
+nv: IPT_ENABLED, apps
+
+Network.IpPassThroughSupported - IP Pass Through is supported
+type: uint
+security: Low
+nv: IPT_SUPPORTED, apps
+
+Network.IpPassThroughHostMAC - IP Pass Through host MAC
+type: uint64
+security: Low
+nv: none
+
+Network.IpPassThroughCradleMAC - MAC address Cradle IP Passthrough is locked to
+type: uint64
+security: Low
+nv: CIPT_MAC, apps
+
+Network.EthernetMAC - Ethernet MAC address
+type: uint64
+security: OEM
+nv: none
+
+Network.IpPassThroughHostPcIface - IP Pass Through host PC interface
+type: uint
+security: OEM
+nv: IPT_HOSTPC_INTERFACE, apps
+
+Network.IpPassThroughHostPcMac - IP Pass Through host PC MAC
+type: uint64
+security: OEM
+nv: IPT_HOSTPC_MAC, apps
+
+Network.IpPassThroughHostPcName - IP Pass Through host PC name
+type: string
+security: OEM
+nv: IPT_HOSTPC_NAME, apps
+
+
+
+GROUP: Time
+Time.ActivationDate - Activation Date
+type: uint
+security: OEM
+nv: IDS_INIT_ACTIVATION_TIME, apps
+
+Time.UptimeTotal - Cumulative number of seconds the device is powered on
+type: uint
+security: OEM
+nv: none
+
+Time.UptimeCurrent - Current uptime in seconds after device is powered on
+type: uint
+security: OEM
+nv: none
+
+Time.UptimeControl - Control for saving/clearing current uptime counters
+type: enum - SaveAll ClearTotal
+security: OEM
+nv: none
+
+Time.WarrantyDateCode - CDMA System Time <MM/DD/YYYY HH:MM>
+type: string
+security: OEM
+nv: CUSTOMER_WDC, apps
+
+Time.NtpEnabled - NTP Enabled
+type: uint
+security: OEM
+nv: NTP_ENABLED, apps
+
+Time.NtpLaunch - Launch NTPD
+type: uint
+security: OEM
+nv: none
+
+Time.NtpSet - NTP Time Is Set
+type: uint
+security: OEM
+nv: none
+
+Time.UserTimeZoneOffsetEnabled - User time zone offset enable
+type: bool
+security: OEM
+nv: USER_TZOFFSET_ENABLED, apps
+
+Time.UserTimeZoneOffset - User time zone offset
+type: int
+security: OEM
+nv: USER_TZOFFSET, apps
+
+Time.TimeSource - Source used for system time
+type: enum - Unknown RTC Cellular NTP RDATE
+security: OEM
+nv: none
+
+Time.TimeProtocolToUse - Time protocol used to get current time
+type: enum - NTP RDATE
+security: OEM
+nv: TIME_PROTOCOL_TO_USE, apps
+
+Time.Use24HrTimeFormat - Use 12/24 hr time format. 0-12hr/1-24hr
+type: bool
+security: OEM
+nv: TIME_USE_24HR_TIME_FORMAT, apps
+
+Time.UiDateFormat - Date format to use in UI
+type: enum - MMDDYYYY DDMMYYYY YYYYMMDD
+security: OEM
+nv: TIME_UI_DATE_FORMAT, apps
+
+
+
+GROUP: Sim
+Sim.SimStatus - SIM Status
+type: enum - Ready Startup NotPresent InvalidCard Failure Init Locked Blocked Rejected MEPLocked MEPBlocked
+security: OEM
+nv: none
+
+Sim.PhoneNumber - Phone Num
+type: string
+security: OEM
+nv: none
+
+Sim.Imsi - IMSI
+type: string
+security: OEM
+nv: none
+
+Sim.Iccid - ICCID
+type: string
+security: OEM
+nv: none
+
+Sim.Spn - SPN
+type: string
+security: OEM
+nv: none
+
+Sim.MepType - MEP Type
+type: enum - Unknown None NW NS SP CP
+security: OEM
+nv: none
+
+Sim.PinMode - PIN Mode
+type: enum - Unknown Enabled Disabled
+security: OEM
+nv: none
+
+Sim.PinEnable - Enable PIN
+type: string
+security: OEM
+nv: none
+
+Sim.PinDisable - Disable PIN
+type: string
+security: OEM
+nv: none
+
+Sim.PinChange - Change PIN
+type: string
+security: OEM
+nv: none
+
+Sim.PinVerify - Enter PIN
+type: string
+security: OEM
+nv: none
+
+Sim.PinRetries - PIN Retries
+type: uint
+security: OEM
+nv: none
+
+Sim.PukVerify - Enter PUK
+type: string
+security: OEM
+nv: none
+
+Sim.PukRetries - PUK Retries
+type: uint
+security: OEM
+nv: none
+
+Sim.AlertNotReady - Alert - SIM not ready
+type: uint
+security: OEM
+nv: none
+
+Sim.SimMepLockFacility - +CLCK facility
+type: enum - PN PU PP PC
+security: OEM
+nv: none
+
+Sim.SimMepLockStatus - +CLCK status
+type: enum - Unknown Disabled Enabled
+security: OEM
+nv: none
+
+Sim.SimMepUnlock - +CLCK unlock
+type: string
+security: OEM
+nv: none
+
+Sim.Gid1 - GROUP ID level 1
+type: string
+security: OEM
+nv: none
+
+Sim.Gid1Bin - GROUP ID level 1 Bin
+type: buffer
+security: OEM
+nv: none
+
+Sim.CardType - Card Type(UK O2)
+type: enum - Unknown Postpaid Prepaid
+security: OEM
+nv: none
+
+Sim.SimReset - SIM Reset
+type: uint
+security: Low
+nv: none
+
+Sim.SimDisplayText - Display Text
+type: string
+security: Low
+nv: none
+
+Sim.SimDisplayTextReadFlag - Display Text Read Flag
+type: uint
+security: Low
+nv: none
+
+Sim.SimAIDSessionOpen - Open AID Sim Session
+type: buffer
+security: Low
+nv: none
+
+Sim.SimAIDSessionClose - Close AID Sim Session
+type: uint
+security: Low
+nv: none
+
+Sim.SimAIDSessionID - AID Session ID
+type: uint64
+security: Low
+nv: none
+
+Sim.SimAIDChannelID - AID Channel ID
+type: int
+security: Low
+nv: none
+
+Sim.SimAIDSessionWrite - AID Sim Session Write
+type: buffer
+security: Low
+nv: none
+
+Sim.SimAIDSessionWriteStatus - AID Session write Status
+type: uint
+security: Low
+nv: none
+
+Sim.SprintSimLock - Sprint SIM Lock State
+type: uint
+security: Low
+nv: SML_OPTION
+
+Sim.SpecialType - Specialty SIM Type
+type: enum - Unknown None FirstNet VZW
+security: OEM
+nv: none
+
+Sim.Perso - PERSO
+type: string
+security: OEM
+nv: none
+
+Sim.Efsst - EFSST
+type: string
+security: OEM
+nv: none
+
+Sim.Numeric - Numeric operator id
+type: string
+security: OEM
+nv: none
+
+Sim.Mcc - SIM MCC
+type: string
+security: OEM
+nv: none
+
+Sim.Mnc - SIM MNC
+type: string
+security: OEM
+nv: none
+
+Sim.Refresh - SIM refresh
+type: uint
+security: Low
+nv: none
+
+Sim.DishUiccFactoryResetEnable - Dish UICC Factory Reset Enable
+type: bool
+security: Low
+nv: DISH_UICC_FACTORY_RESET_ENABLE, apps
+
+Sim.Pnn - SIM plmn network name list
+type: buffer
+security: OEM
+nv: none
+
+Sim.Opl - SIM operator plmn list
+type: buffer
+security: OEM
+nv: none
+
+Sim.Opl5g - SIM 5g operator plmn list
+type: buffer
+security: OEM
+nv: none
+
+Sim.Ehplmn - SIM equivalent home plmn list
+type: buffer
+security: OEM
+nv: none
+
+
+
+GROUP: Wlan
+Wlan.WifiSupported - WiFi Supported
+type: enum - Disabled Primary PrimaryGuest PrimaryGuestAux
+security: Low
+nv: WLAN_SUPPORTED, apps
+
+Wlan.WifiEnabled - WiFi Enabled
+type: uint
+security: OEM
+nv: WLAN_ENABLED
+
+Wlan.WifiOn - WiFi On
+type: uint
+security: OEM
+nv: none
+
+Wlan.WifiRestart - WiFi Restart
+type: uint
+security: OEM
+nv: none
+
+Wlan.PhyMode - PHY Mode
+type: enum - 802.11b 802.11g 802.11bg 802.11bn 802.11gn 802.11bgn 802.11bgnac 802.11bgnax 802.11a 802.11an 802.11anac 802.11ac 802.11anax 802.11ax6e
+security: OEM
+nv: WLAN_PHY_MODE, apps
+
+Wlan.SSID - SSID
+type: string
+security: OEM
+nv: WLAN_SSID, apps
+
+Wlan.HiddenSsidEnabled - Enabled hidden SSID
+type: uint
+security: OEM
+nv: WLAN_HIDDEN_SSID, apps
+
+Wlan.SsidReminderEnabled - SSID Reminder Enabled
+type: uint
+security: OEM
+nv: WLAN_SSID_REMINDER, apps
+
+Wlan.Channel - WiFi Channel
+type: uint
+security: OEM
+nv: WLAN_CHANNEL, apps
+
+Wlan.WifiLastChannel - Maximum WiFi Channel
+type: uint
+security: OEM
+nv: WLAN_LAST_CHANNEL, apps
+
+Wlan.CountryCode - Country Code
+type: string
+security: OEM
+nv: WLAN_COUNTRY_CODE, apps
+
+Wlan.Encryption - WiFi Encryption
+type: enum - None WPA2AES WPAWPA2 WPA3AES WPA2WPA3
+security: OEM
+nv: WLAN_ENCRYPTION, apps
+
+Wlan.TxPower - TX Power
+type: uint
+security: OEM
+nv: WLAN_TX_POWER, apps
+
+Wlan.Passphrase - Passphrase
+type: string
+security: OEM
+nv: WLAN_PASSPHRASE, apps
+
+Wlan.PassphraseReminderEnabled - Passphrase reminder
+type: uint
+security: OEM
+nv: WLAN_PASSPHRASE_REMINDER, apps
+
+Wlan.RtsThreshold - RTS Threshold
+type: uint
+security: OEM
+nv: WLAN_RTS_THRESHOLD, apps
+
+Wlan.FragThreshold - Frag Threshold
+type: uint
+security: OEM
+nv: WLAN_FRAG_THRESHOLD, apps
+
+Wlan.WifiState - WiFi Status
+type: enum - Stopped Started Starting Stopping Restarting
+security: OEM
+nv: none
+
+Wlan.WifiActivated - WiFi Activated
+type: uint
+security: OEM
+nv: WLAN_ACTIVATED, apps
+
+Wlan.SoftapMAC - SoftapMAC
+type: uint64
+security: Low
+nv: WLAN_MAC, apps
+
+Wlan.AccessControl - Access Control
+type: enum - None White Black Radius
+security: OEM
+nv: WLAN_ACCESSCONTROL, apps
+
+Wlan.Whitelist - White List
+<label>,<MAC addr>
+type: string
+security: OEM
+nv: WLAN_WHITEMACLIST
+
+Wlan.Blacklist - Black List
+<label>,<MAC addr>
+type: string
+security: OEM
+nv: WLAN_BLACKMACLIST
+
+Wlan.WifiOff - WiFi Off
+type: uint
+security: OEM
+nv: none
+
+Wlan.FtmMode - FTM Mode
+type: uint
+security: High
+nv: none
+
+Wlan.SsidPrefix - SSID Prefix
+type: string
+security: Low
+nv: WLAN_SSID_PREFIX, apps
+
+Wlan.LogMask - WLAN logging enable mask: 0x01=hostapd, 0x02=wpa_supplicant, 0x04=dhcpcd, 0x08=kernel log, 0x10=FW log to QXDM, 0x20=FW log to local, 0x30=FW log to kernel, 0x40=DHCP packet to kernel log
+type: uint
+security: High
+nv: WLAN_LOGMASK, apps
+
+Wlan.2GBandwidth - Bandwidth for 2.4 GHz band
+type: enum - HT20 HT40 VHT80 VHT160
+security: OEM
+nv: WLAN_2G_BANDWIDTH, apps
+
+Wlan.5GBandwidth - Bandwidth for 5 GHz band
+type: enum - HT20 HT40 VHT80 VHT160
+security: OEM
+nv: WLAN_5G_BANDWIDTH, apps
+
+Wlan.ThermEnabled - Thermal mitigation enable mask: 0x01=battery temp, 0x02=WLAN chip temp
+type: uint
+security: Low
+nv: WLAN_THERM_MITIGATION_ENABLE, apps
+
+Wlan.WmmEnabled - WMM enabled
+type: uint
+security: OEM
+nv: WLAN_WMM_ENABLED, apps
+
+Wlan.Uapsd - Enable AP Uapsd
+type: uint
+security: OEM
+nv: WLAN_UAPSD, apps
+
+Wlan.Privacy - Enable Main AP Privacy
+type: uint
+security: OEM
+nv: WLAN_PRIVACY, apps
+
+Wlan.MfpMode - 802.11w MFP mode
+type: enum - Disabled Optional Required
+security: OEM
+nv: WLAN_MFP_MODE, apps
+
+Wlan.2GMcsChanList - 2G MCS chan list
+type: string
+security: OEM
+nv: MCS_2G_CHAN_LIST, apps
+
+Wlan.5GMcsChanList - 5G MCS chan list
+type: string
+security: OEM
+nv: MCS_5G_CHAN_LIST, apps
+
+Wlan.WlanEnableCb - WLAN enable callback
+type: string
+security: OEM
+nv: none
+
+Wlan.6ESupported - WiFi 6E Supported
+type: enum - Disabled SAP STA SAPSTA
+security: Low
+nv: WLAN_6E_SUPPORTED, apps
+
+Wlan.6ESapEnabled - WiFi 6E SAP Enabled
+type: uint
+security: OEM
+nv: WLAN_6E_SAP_ENABLED, apps
+
+Wlan.6EStaEnabled - WiFi 6E STA Enabled
+type: uint
+security: OEM
+nv: WLAN_6E_STA_ENABLED, apps
+
+Wlan.6GBandwidth - Bandwidth for 6 GHz band
+type: enum - HT20 HT40 VHT80 VHT160
+security: OEM
+nv: WLAN_6G_BANDWIDTH, apps
+
+Wlan.6GMcsChanList - 6G MCS chan list
+type: string
+security: OEM
+nv: MCS_6G_CHAN_LIST, apps
+
+Wlan.5GMcs160MChanList - 5G MCS chan list with 160MHz BW
+type: string
+security: OEM
+nv: MCS_5G_160M_CHAN_LIST, apps
+
+Wlan.TxPowerACConfig - TX Power on AC
+type: uint
+security: OEM
+nv: WLAN_TX_POWER_AC_CONFIG, apps
+
+Wlan.5G160MSupported - 5G 160MHz BW supported
+type: uint
+security: OEM
+nv: WLAN_5G_160M_SUPPORTED, apps
+
+Wlan.6ENoACSupported - 6E supported without AC
+type: uint
+security: OEM
+nv: WLAN_6E_NO_AC_SUPPORTED, apps
+
+
+
+GROUP: Guest
+Guest.GuestEnabled - Guest Enabled
+type: uint
+security: OEM
+nv: WLAN_GUEST_ENABLED
+
+Guest.GuestOn - Guest On
+type: uint
+security: OEM
+nv: none
+
+Guest.GuestSSID - Guest SSID
+type: string
+security: OEM
+nv: WLAN_GUEST_SSID, apps
+
+Guest.GuestHiddenSsid - Enabled hidden SSID for Guest
+type: uint
+security: OEM
+nv: WLAN_GUEST_HIDDEN_SSID, apps
+
+Guest.GuestEncryption - Guest Encryption
+type: enum - None WPA2AES WPAWPA2 WPA3AES WPA2WPA3
+security: OEM
+nv: WLAN_GUEST_ENCRYPTION, apps
+
+Guest.GuestPassphrase - Guest Passphrase
+type: string
+security: OEM
+nv: WLAN_GUEST_PASSPHRASE, apps
+
+Guest.GuestGenPassphrase - Guest Generate Passphrase flag
+type: uint
+security: OEM
+nv: WLAN_GUEST_GENERATE_PASSPHRASE, apps
+
+Guest.GuestMaxClientAllowed - Guest max clients allowed
+type: uint
+security: OEM
+nv: WLAN_GUEST_MAX_CLIENTS_SUPPORTED, apps
+
+Guest.GuestState - Guest WiFi Status
+type: enum - Stopped Started Starting Stopping Restarting
+security: OEM
+nv: none
+
+Guest.GuestChannel - Guest WiFi Channel
+type: uint
+security: OEM
+nv: WLAN_GUEST_CHANNEL, apps
+
+Guest.GuestAccessProfile - Guest Access Profile
+type: enum - InternetOnly Full
+security: OEM
+nv: WLAN_GUEST_ACCESS_PROF, apps
+
+Guest.GuestPhyMode - Guest PHY Mode
+type: enum - 802.11b 802.11g 802.11bg 802.11bn 802.11gn 802.11bgn 802.11bgnac 802.11bgnax 802.11a 802.11an 802.11anac 802.11ac 802.11anax 802.11ax6e
+security: OEM
+nv: WLAN_GUEST_PHY_MODE, apps
+
+Guest.GuestClientNumWatermark - Analytics - watermark for guest clients
+type: uint
+security: High
+nv: GUESTCLIENTWATERMARK, apps
+
+Guest.GuestSsidPrefix - Guest SSID Prefix
+type: string
+security: Low
+nv: WLAN_GUEST_SSID_PREFIX, apps
+
+Guest.NumberOfClientsGuest - Number of clients connected guest
+type: uint
+security: Low
+nv: none
+
+Guest.GuestTimerEnable - Guest WiFi timer enable
+type: bool
+security: OEM
+nv: WLAN_GUEST_TIMER_ENABLE, apps
+
+Guest.GuestTimerValue - Guest WiFi timer value (seconds)
+type: uint
+security: OEM
+nv: WLAN_GUEST_TIMER_VALUE, apps
+
+Guest.GuestTimerTimestamp - Timestamp when guest WiFi is turned on (sec since boot)
+type: uint
+security: OEM
+nv: none
+
+Guest.GuestPrivacy - Enable Guest AP Privacy
+type: uint
+security: OEM
+nv: WLAN_PRIVACY_GUEST, apps
+
+
+
+GROUP: Offload
+Offload.Supported - Offload Supported
+type: uint
+security: Low
+nv: WLAN_OFFLOAD_SUPPORTED, apps
+
+Offload.Enabled - Offload Enabled
+type: uint
+security: OEM
+nv: WLAN_OFFLOAD_ENABLED
+
+Offload.ActivationRequired - Offload Activation Required
+type: uint
+security: OEM
+nv: WLAN_OFFLOAD_ACTIVATIONREQUIRED, apps
+
+Offload.Status - Offload Status
+type: enum - Disabled Idle Connected Failed
+security: OEM
+nv: none
+
+Offload.SecurityStatus - Offload Security Status
+type: enum - Disconnected Open Secured
+security: OEM
+nv: none
+
+Offload.Bars - Signal Bars
+type: uint
+security: OEM
+nv: none
+
+Offload.Rssi - Signal Strength
+type: int
+security: OEM
+nv: none
+
+Offload.BarsLookup - Bars Lookup Table
+<RSSI0>,<RSSI1>,<RSSI2>,<RSSI3>,<RSSI4>,<RSSI5>
+type: buffer
+security: OEM
+nv: WLAN_OFFLOAD_BARS_LOOKUP, apps
+
+Offload.DataRx - Offload Data Received
+type: uint64
+security: OEM
+nv: none
+
+Offload.DataTx - Offload Data Transmitted
+type: uint64
+security: OEM
+nv: none
+
+Offload.CredentialList - Offload Credentials
+<realm>,<domain>,<username>,<password>,<ca_cert>,<client_cert>,<private_key>,<private_key_passwd>,<eap>,<phase1>,<phase2>,<roaming_consortium>,<pcsc>,<imsi>,<milenage>,<priority>
+type: string
+security: High
+nv: WLAN_OFFLOAD_CREDENTIALLIST
+
+Offload.NetworkList - Offload Networks
+<ssid>,<key_mgmt>,<eap>,<proto>,<pairwise>,<group>,<identity>,<anonymous_identity>,<password>,<ca_cert>,<client_cert>,<private_key>,<private_key_passwd>,<pin>,<pcsc>,<phase1>,<phase2>,<psk>,<wpa_ptk_rekey>,<mode>,<scan_ssid>,<priority>
+type: string
+security: High
+nv: WLAN_OFFLOAD_NETWORKLIST
+
+Offload.BlockList - Offload Blocks
+<active>,<block_file_path>
+type: string
+security: High
+nv: WLAN_OFFLOAD_BLOCKLIST
+
+Offload.SimplifiedNetworkList - Offload Simplified Network List
+<SSID>,<passphrase>,<encryption_type>,<display_name>,<priority>
+type: string
+security: OEM
+nv: WLAN_OFFLOAD_SIMPNETLIST
+
+Offload.ConnectionSsid - Offload connection SSID
+type: string
+security: OEM
+nv: none
+
+Offload.FailReason - Offload connection fail reason
+type: string
+security: OEM
+nv: none
+
+Offload.OffloadRestart - Offload restart
+type: uint
+security: OEM
+nv: none
+
+Offload.ScanStart - Offload scan start
+type: uint
+security: OEM
+nv: none
+
+Offload.ScanProgress - Offload scan progress
+type: enum - Idle Started FinishedSuccess FinishedFail Timeout
+security: OEM
+nv: none
+
+Offload.ScanList - Offload scan list
+<SSID,<encryption_type>,<RSSI>
+type: string
+security: OEM
+nv: none
+
+Offload.StationIPv4 - Offload station IPv4 address
+type: uint
+security: OEM
+nv: none
+
+Offload.TimeOn - Connection time (secs since epoch)
+type: uint
+security: OEM
+nv: none
+
+
+
+GROUP: WPS
+WPS.WpsSupported - WPS Supported
+type: enum - Disabled PrimaryGuest Aux PrimaryGuestAux
+security: Low
+nv: WLAN_WPS_SUPPORTED, apps
+
+WPS.WpsEnabled - WPS enabled
+type: enum - Disabled Primary Guest Aux
+security: OEM
+nv: WLAN_WPS_ENABLED, apps
+
+WPS.WpsStart - WPS Start
+type: uint
+security: OEM
+nv: none
+
+WPS.WpsMode - WPS Mode
+type: enum - PBC PIN
+security: OEM
+nv: none
+
+WPS.WpsPin - WPS PIN
+type: string
+security: OEM
+nv: WLAN_WPS_PIN, apps
+
+WPS.WpsProgress - WPS Progress
+type: enum - Idle Started FinishedSuccess FinishedFail Timeout Overlap PINNeeded
+security: OEM
+nv: none
+
+WPS.WpsEnabledLcd - Enable WPS configuration via LCD UI
+type: bool
+security: OEM
+nv: WLAN_WPS_ENABLED_LCD, apps
+
+WPS.WpsBlocked - WPS blocked
+type: bool
+security: OEM
+nv: WLAN_WPS_BLOCKED, apps
+
+
+
+GROUP: Clients
+Clients.MaxClientSupported - Max clients supported
+type: uint
+security: Low
+nv: WLAN_MAX_CLIENTS, apps
+
+Clients.MaxClientAllowed - Max clients allowed
+type: uint
+security: OEM
+nv: WLAN_MAX_CLIENTS_SUPPORTED, apps
+
+Clients.NumberOfClientsConnected - Number of clients connected
+type: uint
+security: OEM
+nv: none
+
+Clients.PrimaryClientNumWatermark - Analytics - watermark for primary clients
+type: uint
+security: High
+nv: PRIMARYCLIENTWATERMARK, apps
+
+Clients.ClientNumWatermark - Analytics - watermark for total clients
+type: uint
+security: High
+nv: CLIENTWATERMARK, apps
+
+Clients.MaxClientAllowedHome - Max number of WiFi users when in home network
+type: uint
+security: Low
+nv: WLAN_ALLOWED_CLIENTS_HOME, apps
+
+Clients.MaxClientAllowedGSM - Max number of WiFi users when in GSM network
+type: uint
+security: Low
+nv: WLAN_ALLOWED_CLIENTS_GSM, apps
+
+Clients.MaxClientAllowedDomRoam - Max number of WiFi users when in domestic roaming
+type: uint
+security: Low
+nv: WLAN_ALLOWED_CLIENTS_DOMROAM, apps
+
+Clients.MaxClientAllowedIntlRoam - Max number of WiFi users when in international roaming
+type: uint
+security: Low
+nv: WLAN_ALLOWED_CLIENTS_INTLROAM, apps
+
+Clients.NumberOfClientsMain - Number of clients connected main
+type: uint
+security: Low
+nv: none
+
+
+
+GROUP: Aux
+Aux.AuxEnabled - Aux Enabled
+type: uint
+security: OEM
+nv: WLAN_AUX_ENABLED, apps
+
+Aux.AuxMode - Aux mode
+type: enum - Off Guest Station
+security: OEM
+nv: WLAN_AUX_MODE, apps
+
+Aux.AuxSSID - Aux SSID
+type: string
+security: OEM
+nv: WLAN_AUX_SSID, apps
+
+Aux.AuxHiddenSsid - Enabled hidden SSID for Aux
+type: uint
+security: OEM
+nv: WLAN_AUX_HIDDEN_SSID, apps
+
+Aux.AuxEncryption - Aux Encryption
+type: enum - None WPA2AES WPAWPA2 WPA3AES WPA2WPA3
+security: OEM
+nv: WLAN_AUX_ENCRYPTION, apps
+
+Aux.AuxPassphrase - Aux Passphrase
+type: string
+security: OEM
+nv: WLAN_AUX_PASSPHRASE, apps
+
+Aux.AuxMaxClientAllowed - Aux max clients allowed
+type: uint
+security: OEM
+nv: WLAN_AUX_MAX_CLIENTS_SUPPORTED, apps
+
+Aux.AuxStatus - Aux WiFi Status
+type: enum - Stopped Started Starting Stopping Restarting
+security: OEM
+nv: none
+
+Aux.AuxChannel - Aux WiFi Channel
+type: uint
+security: OEM
+nv: WLAN_AUX_CHANNEL, apps
+
+Aux.AuxPhyMode - Aux PHY Mode
+type: enum - 802.11b 802.11g 802.11bg 802.11bn 802.11gn 802.11bgn 802.11bgnac 802.11bgnax 802.11a 802.11an 802.11anac 802.11ac 802.11anax 802.11ax6e
+security: OEM
+nv: WLAN_AUX_PHY_MODE, apps
+
+Aux.AuxClientNumWatermark - Analytics - watermark for aux clients
+type: uint
+security: High
+nv: AUXCLIENTWATERMARK, apps
+
+
+
+GROUP: Lmetrics
+Lmetrics.Clear - Clear all
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.WanDisconn - # of WAN disconnects
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.DhcpRenew - # of Dhcp renews
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.DnsRestart - # of dnsmasq restarts
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.ClientChg - # of client change events
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.IptLinkDown - # of IPT down events
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.BackLogRulesMax - Max # of rules for LX
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.BackLogMax - Max # of events for LX
+type: uint
+security: OEM
+nv: none
+
+Lmetrics.BackLogMaxEvents - Info of events for LX
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: DataService
+DataService.StartCall - Start Call
+type: uint
+security: OEM
+nv: none
+
+DataService.StopCall - Stop Call
+type: uint
+security: OEM
+nv: none
+
+DataService.Connect - Connect 
+type: uint
+security: OEM
+nv: none
+
+DataService.Autoconnect - Autoconnect
+type: enum - Never Always HomeOnly RoamOnly
+security: OEM
+nv: AUTOCONNECT_GLOBAL, apps
+
+DataService.ConnectionState - Connection State
+type: enum - Disconnected Connecting Connected Disconnecting
+security: OEM
+nv: none
+
+DataService.ConnectionType - Connection Type
+type: enum - None IPv4Only IPv6Only IPv4AndIPv6
+security: OEM
+nv: none
+
+DataService.ConnStartTime - Connection Start Time
+type: uint
+security: OEM
+nv: none
+
+DataService.ConnDuration - Connection Duration
+type: uint
+security: OEM
+nv: none
+
+DataService.ConnInactCause - Connection Inactivity Cause
+type: uint
+security: OEM
+nv: none
+
+DataService.IPv4Addr - IPv4 Addr
+type: uint
+security: OEM
+nv: none
+
+DataService.IPv6Addr - IPv6 Addr
+type: string
+security: OEM
+nv: none
+
+DataService.DataTransferred - Data Transferred
+type: uint64
+security: OEM
+nv: none
+
+DataService.DataTx - Data Transmitted
+type: uint64
+security: OEM
+nv: none
+
+DataService.DataRx - Data Received
+type: uint64
+security: OEM
+nv: none
+
+DataService.Disconnected - Alert-WWAN Disconnected
+type: uint
+security: OEM
+nv: none
+
+DataService.PromptForPassword - Prompt for Password
+type: enum - Disabled Password Pass_Uname
+security: High
+nv: PROMPT_FOR_PWD, apps
+
+DataService.LegacyApnOpEnabled - Legacy Apn Op Enabled
+type: uint
+security: OEM
+nv: LEGACY_APN_OP_ENABLED, apps
+
+DataService.AutoApnEnabled - Auto APN enabled
+type: enum - Disabled Generic TelstraLanes FirstNet
+security: OEM
+nv: AUTOAPN_ENABLED, apps
+
+DataService.AutoApnVersion - Auto APN version
+type: uint
+security: OEM
+nv: AUTOAPN_VERSION, apps
+
+DataService.BlankApnEnabled - Blank Apn Enabled
+type: uint
+security: OEM
+nv: BLANK_APN_ENABLED, apps
+
+DataService.PromptForApnSelection - Prompt for APN Selection
+type: bool
+security: OEM
+nv: PROMPT_FOR_APN_SELECTION, apps
+
+DataService.RestrictedApnsEnabled - Restricted APNs Enabled
+type: uint
+security: High
+nv: RESTRICTED_APNS_ENABLED, apps
+
+DataService.RestrictedApns - Restricted APNs
+type: string
+security: High
+nv: RESTRICTED_APNS, apps
+
+DataService.LteAttachProfile - LTE Attach Profile
+type: string
+security: OEM
+nv: none
+
+DataService.LteAttachTie - LTE Attach Tie
+type: bool
+security: OEM
+nv: none
+
+DataService.DataProfile - Default Data Profile
+type: string
+security: OEM
+nv: none
+
+DataService.Profile - Profile List
+<profile name>,<access control>,<pdp type>,<ip address>,<apn>,<auth type>,<username>,<password>,<inactivity timer>,<tech type>,<pdp roaming type>,<apn disable>,<max conn timer>,<max conn>,<wait time>
+type: buffer
+security: OEM
+nv: none
+
+DataService.ProfInitStatus - Profile Init Status
+type: enum - Not Ready Ready
+security: OEM
+nv: none
+
+DataService.IPv4WwanState - IPv4 Wwan State
+type: enum - Disconnected Connecting Connected Disconnecting
+security: OEM
+nv: none
+
+DataService.IPv6WwanState - IPv6 Wwan State
+type: enum - Disconnected Connecting Connected Disconnecting
+security: OEM
+nv: none
+
+DataService.IPv4NetInfo - IPv4 Net Info
+type: uint
+security: OEM
+nv: none
+
+DataService.IPv6NetInfo - IPv6 Net Info
+type: uint
+security: OEM
+nv: none
+
+DataService.AutoApnState - Auto Apn State
+type: enum - NULL INIT WAIT SIM TRY_CACHE TRY_DB TRY_BLANK_APN SUCCESS FAIL REJECT
+security: OEM
+nv: none
+
+DataService.Ehplmn - Equivalent home plmn list
+type: string
+security: OEM
+nv: none
+
+DataService.EmbdProfile - Embedded Data Profile
+type: string
+security: OEM
+nv: none
+
+DataService.EmbdConnState - Embedded Connection State
+type: enum - Disconnected Connecting Connected Disconnecting
+security: OEM
+nv: none
+
+DataService.EmbdConnType - Embedded Connection Type
+type: enum - None IPv4Only IPv6Only IPv4AndIPv6
+security: OEM
+nv: none
+
+DataService.EmbdPing4 - Embedded Data Ping4
+type: string
+security: OEM
+nv: none
+
+DataService.EmbdPing6 - Embedded Data Ping6
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: Router
+Router.Hostname - network host name
+type: string
+security: OEM
+nv: DEVICE_HOSTNAME, apps
+
+Router.DomainName - network domain name
+type: string
+security: Low
+nv: DOMAIN_NAME, apps
+
+Router.DnsMode - DNS mode
+type: enum - Auto Manual
+security: OEM
+nv: DNS_MODE, apps
+
+Router.GwIpAddr - IP address of gateway
+type: uint
+security: OEM
+nv: GW_IPADDR, apps
+
+Router.GwNetmask - Netmask of gateway
+type: uint
+security: OEM
+nv: GW_NETMASK, apps
+
+Router.ClientList - Router client list
+<MAC addr>,<IP addr>,<hostname>,<USB client flag>,<source #>
+type: buffer
+security: OEM
+nv: none
+
+Router.DnspExcpList - DNS poisoning excp list
+type: string
+security: OEM
+nv: DNSPOISON_EXCLIST, apps
+
+Router.DnspEmbdExcpList - DNS poisoning embd excp list
+type: string
+security: OEM
+nv: DNSPOISON_EMBDEXCLIST, apps
+
+Router.DnspForce - Force DNS poisoning
+type: uint
+security: OEM
+nv: DNSPOISON_FORCE, apps
+
+Router.DnspActive - DNS poisoning active
+type: uint
+security: OEM
+nv: none
+
+Router.TeSupported - Tethered netw supported
+type: uint
+security: Low
+nv: TE_SUPPORTED, apps
+
+Router.TeEnabled - Tethered netw enabled
+type: uint
+security: OEM
+nv: TE_ENABLED, apps
+
+Router.TeRestart - Tethered USB restart
+type: uint
+security: OEM
+nv: none
+
+Router.TeEnabledWebUI - Enable WebUI when ChargeOnly
+type: uint
+security: OEM
+nv: TE_FORCE, apps
+
+Router.UsbPcIp - USB PC IP address
+type: uint
+security: OEM
+nv: none
+
+Router.GuestIpAddr - IP address of gateway
+type: uint
+security: OEM
+nv: GUEST_IPADDR, apps
+
+Router.GuestNetmask - Netmask of gateway
+type: uint
+security: OEM
+nv: GUEST_NETMASK, apps
+
+Router.DefaultHostname - Default hostname
+type: string
+security: Low
+nv: DEFAULT_HOSTNAME, apps
+
+Router.HostnameAliases - Hostname alias list
+type: string
+security: Low
+nv: HOSTNAME_ALIASLIST, apps
+
+Router.BridgeLanNetmask - Netmask of LAN client
+type: uint
+security: OEM
+nv: BRIDGE_LAN_NETMASK, apps
+
+
+
+GROUP: Upnp
+Upnp.UpnpSupported - UPNP supported
+type: uint
+security: Low
+nv: UPNP_SUPPORTED, apps
+
+Upnp.UpnpEnabled - UPNP enabled
+type: uint
+security: OEM
+nv: UPNP_ENABLED, apps
+
+Upnp.UpnpIgdVersion - IGD Protocol version
+type: uint
+security: OEM
+nv: UPNP_IGDVERSION, apps
+
+Upnp.UpnpAdvertisementPeriod - Advertisement period in minutes
+type: uint
+security: Low
+nv: UPNP_ADV_PERIOD, apps
+
+Upnp.UpnpAdvertisementTtl - Advertisement time to live in number of hops
+type: uint
+security: Low
+nv: UPNP_ADV_TTL, apps
+
+Upnp.UpnpPortMapInfo - UPnP portmap table:
+<active>, <protocol>, <internal port>, <external port>, <ipaddress>
+type: string
+security: Low
+nv: 0, modem
+
+
+
+GROUP: Dhcp
+Dhcp.DhcpEnable - Enable/Disable DHCP
+type: uint
+security: OEM
+nv: DHCP_ENABLE, apps
+
+Dhcp.DhcpRangeLow - Client IP address low
+type: uint
+security: OEM
+nv: DHCP_RANGE_LOW, apps
+
+Dhcp.DhcpRangeHigh - Client IP address high
+type: uint
+security: OEM
+nv: DHCP_RANGE_HIGH, apps
+
+Dhcp.DhcpPrimDns - Primary DNS
+type: uint
+security: OEM
+nv: DHCP_PRIM_DNS, apps
+
+Dhcp.DhcpSecDns - Secondary DNS
+type: uint
+security: OEM
+nv: DHCP_SEC_DNS, apps
+
+Dhcp.DhcpLeaseTime - DHCP Lease time (secs)
+type: uint
+security: OEM
+nv: DHCP_LEASE_TIME, apps
+
+Dhcp.DhcpGuestRangeLow - Client IP address low
+type: uint
+security: OEM
+nv: DHCP_GUEST_RANGE_LOW, apps
+
+Dhcp.DhcpGuestRangeHigh - Client IP address high
+type: uint
+security: OEM
+nv: DHCP_GUEST_RANGE_HIGH, apps
+
+
+
+GROUP: Failover
+Failover.Supported - Failover supported
+type: bool
+security: OEM
+nv: FAILOVER_SUPPORTED, apps
+
+Failover.Enabled - Failover enabled
+type: bool
+security: OEM
+nv: FAILOVER_ENABLED, apps
+
+Failover.Backhaul - Active backhaul
+type: enum - LTE ETH WLAN
+security: OEM
+nv: none
+
+Failover.BackhaulInternal - Backhaul Internal
+type: enum - LTE ETH WLAN
+security: OEM
+nv: none
+
+Failover.WANConnected - WAN has connectivity
+type: bool
+security: OEM
+nv: none
+
+Failover.IPv4Targets - IPv4 ping-targets
+type: buffer
+security: OEM
+nv: FAILOVER_IPV4_PTARGETS
+
+Failover.IPv6Targets - IPv6 ping-targets
+type: buffer
+security: OEM
+nv: FAILOVER_IPV6_PTARGETS
+
+Failover.MonitorPeriod - Ping idle-time
+type: uint
+security: OEM
+nv: FAILOVER_MONITOR_PERIOD, apps
+
+Failover.FailoverCount - Number of failovers
+type: uint
+security: OEM
+nv: none
+
+Failover.RecoveryCount - Number of recoveries
+type: uint
+security: OEM
+nv: none
+
+Failover.keepaliveEnable - Failover keepalive enable
+type: bool
+security: OEM
+nv: FAILOVER_KEEPALIVE_ENABLE, apps
+
+Failover.KeepaliveSleep - Failover keepalive sleep
+type: uint
+security: OEM
+nv: FAILOVER_KEEPALIVE_SLEEP, apps
+
+Failover.GenerateLogs - Generate Failover logs
+type: uint
+security: OEM
+nv: FAILOVER_GENERATE_LOGS, apps
+
+
+
+GROUP: Wwan
+Wwan.NwService - NW Service
+type: enum - NoService Limited GSM WCDMA LTE 1xHRPD HRPD 1X 5G 5GSA
+security: OEM
+nv: none
+
+Wwan.PsService - PS Service
+type: enum - None GPRS EDGE UMTS HSDPA HSUPA HSPA HSPAPLUS DCHSPAPLUS LTE 1X HRPD 1xHRPD GSM 4G 4GPLUS 4GATT 5GEVO 5GSUB6 5GMMWAVE 5GATT 5GPLUS 5GUC 5GUW
+security: OEM
+nv: none
+
+Wwan.Rat - RAT Mode
+type: enum - Auto 3GOnly 4GOnly 3G4GOnly 5GOnly 3G5GOnly 4G5GOnly
+security: OEM
+nv: none
+
+Wwan.RoamingStatus - Roam Flag
+type: bool
+security: OEM
+nv: none
+
+Wwan.SignalBars - Signal Bars
+type: uint
+security: OEM
+nv: none
+
+Wwan.SignalRssi - RSSI(UMTS or LTE)
+type: int
+security: OEM
+nv: none
+
+Wwan.UmtsSignalRscp - RSCP(UMTS)
+type: int
+security: OEM
+nv: none
+
+Wwan.UmtsSignalEcio - ECIO(UMTS)
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalRsrp - LTE RSRP
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalRsrq - LTE RSRQ
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalSinr - LTE SNR
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalNr5gRsrp - NR5G RSRP
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalNr5gRsrq - NR5G RSRQ
+type: int
+security: OEM
+nv: none
+
+Wwan.SignalNr5gSinr - NR5G SNR
+type: int
+security: OEM
+nv: none
+
+Wwan.RegisteredNetwork - NW Name
+type: string
+security: OEM
+nv: none
+
+Wwan.BandRegion - Get Band Regions
+<label>,<index #>,<current band #>
+type: buffer
+security: OEM
+nv: BAND_INFO_V2
+
+Wwan.BandRegionInfo - Band Region Mask
+<label>,<gsm wcdma mask>,<lte ext 1-64 mask>,<lte ext 65-128 mask>,<lte ext 129-192 mask>,<lte ext 193-255 mask>
+type: buffer
+security: OEM
+nv: BAND_INFO_V2
+
+Wwan.BandRegionSet - Set Band Region
+type: uint
+security: OEM
+nv: none
+
+Wwan.BandRegionCurrent - Index of active band region
+type: int
+security: OEM
+nv: none
+
+Wwan.BandMask2G3G - Current Band Mask - [GSM WCDMA]
+type: string
+security: OEM
+nv: none
+
+Wwan.BandMaskLteExt - Current Band Mask - [LTE EXT1] [LTE EXT2] [LTE EXT3] [LTE EXT4] 
+type: string
+security: OEM
+nv: none
+
+Wwan.BandMaskNR5G - Current Band Mask - [NR5G EXT1] [NR5G EXT2] [NR5G EXT3] [NR5G EXT4] [NR5G EXT5] [NR5G EXT6] [NR5G EXT7] [NR5G EXT8]
+type: string
+security: OEM
+nv: none
+
+Wwan.BandRegionATUpdate - Update Band Region Info from AT
+type: uint
+security: OEM
+nv: none
+
+Wwan.BandRegionDXUpdate - Update Band Region Info from DX
+type: uint
+security: OEM
+nv: none
+
+Wwan.BandRegionDefault - Update Band Region Info to defalt
+type: uint
+security: OEM
+nv: none
+
+Wwan.RegRejectCause - Reg Reject Cause
+type: uint
+security: OEM
+nv: none
+
+Wwan.LTEeHRPDCfg - LTE/eHRPD Configuration
+type: uint
+security: OEM
+nv: none
+
+Wwan.BandDisablementMask - Band Disablement Mask
+type: uint64
+security: OEM
+nv: BAND_DISABLEMENT_MASK, modem
+
+Wwan.LTEBandDisablementMask - LTE Band Disablement Mask
+type: uint64
+security: OEM
+nv: LTE_BAND_DISABLEMENT_MASK, modem
+
+Wwan.LTEBandPriority - LTE Band Priority
+type: buffer
+security: Low
+nv: none
+
+Wwan.LTEBsrTimer - LTE BSR Timer
+type: uint
+security: Low
+nv: none
+
+Wwan.OMALTEeHRPDCfg - OMA LTE/eHRPD Configuration
+<lte_enabled>,<ehrpd_enabled>,<forced>
+type: buffer
+security: High
+nv: OMA_LTE_EHRPD_CFG
+
+Wwan.OMABandCfg - OMA Band Configuration
+<bc10>,<b25_enablement>,<b26_enablement>,<b41_enablement>,<b25_scanpriority>,<b26_scanpriority>,<b41_scanpriority>
+type: buffer
+security: High
+nv: OMA_BAND_CFG
+
+Wwan.PLMNForbidden - PLMN Forbidden Flag
+type: bool
+security: High
+nv: none
+
+Wwan.CMCallEvent - CM Call Event
+type: int
+security: High
+nv: none
+
+Wwan.ImsRegStatus - IMS reg status
+type: enum - NoService InProgress Failed Limited FullService
+security: OEM
+nv: none
+
+Wwan.AutoBandRegionChanged - SIM insert BandRegion Changed
+type: bool
+security: OEM
+nv: none
+
+Wwan.LTEAttRejEMM - LTE Att Rej EMM Cause
+type: uint
+security: Low
+nv: none
+
+Wwan.LTEAttRejESM - LTE Att Rej ESM Cause
+type: uint
+security: Low
+nv: none
+
+Wwan.LTEAttRejReason - LTE Attach Reject Reason
+type: uint
+security: Low
+nv: none
+
+Wwan.Connect - Connect
+type: uint
+security: OEM
+nv: none
+
+Wwan.Connection - Connection State
+type: enum - Disconnected Connecting Connected Disconnecting
+security: OEM
+nv: none
+
+Wwan.CaSccCount - CA SCC Count
+type: uint
+security: OEM
+nv: none
+
+Wwan.MTUSize - MTU size
+type: uint
+security: OEM
+nv: none
+
+Wwan.EndcEnabledConfig - ENDC Enabled Config
+type: bool
+security: OEM
+nv: none
+
+Wwan.LteCmSigInfo - LTE CM Signal Info
+type: buffer
+security: OEM
+nv: none
+
+Wwan.Nr5gCmSigInfo - NR5G CM Signal Info
+type: buffer
+security: OEM
+nv: none
+
+Wwan.NasSigInfo - NAS Signal Info
+type: buffer
+security: OEM
+nv: none
+
+Wwan.RuntimeMTUV4 - Run time IPV4 MTU
+type: uint
+security: OEM
+nv: none
+
+Wwan.RuntimeMTUV6 - Run time IPV6 MTU
+type: uint
+security: OEM
+nv: none
+
+Wwan.ClatEnabled - CLAT enabled or not
+type: bool
+security: OEM
+nv: none
+
+Wwan.5GSaSupported - 5G Standalone Supported
+type: bool
+security: OEM
+nv: WWAN_5G_SA_SUPPORTED, apps
+
+Wwan.5GSaEnabled - 5G Standalone Enabled
+type: bool
+security: OEM
+nv: WWAN_5G_SA_ENABLED, apps
+
+Wwan.5GSaDefault - 5G Standalone Default
+type: bool
+security: OEM
+nv: WWAN_5G_SA_DEFAULT, apps
+
+Wwan.5GSaShowUiConfig - 5G Standalone Show UI Configuration
+type: bool
+security: OEM
+nv: WWAN_5G_SA_SHOW_UI_CONFIG, apps
+
+Wwan.BandMaskNR5GSA - NR5G SA Band Mask - [NR5G EXT1] [NR5G EXT2] [NR5G EXT3] [NR5G EXT4] [NR5G EXT5] [NR5G EXT6] [NR5G EXT7] [NR5G EXT8]
+type: string
+security: OEM
+nv: none
+
+Wwan.5GDisableStatus - 5G disable status
+type: uint
+security: OEM
+nv: none
+
+
+
+GROUP: WwanAdv
+WwanAdv.CurrentBand - Current Band
+type: string
+security: OEM
+nv: none
+
+WwanAdv.RadioQuality - Radio Quality
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.Country - Country Code
+type: string
+security: OEM
+nv: none
+
+WwanAdv.Mcc - MCC
+type: string
+security: OEM
+nv: none
+
+WwanAdv.Mnc - MNC
+type: string
+security: OEM
+nv: none
+
+WwanAdv.HomeMcc - Home MCC
+type: string
+security: OEM
+nv: none
+
+WwanAdv.HomeMnc - Home MNC
+type: string
+security: OEM
+nv: none
+
+WwanAdv.LacTac - LAC/TAC
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.Rac - RAC
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.CellId - Cell ID
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.ChannelId - Channel ID
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.MncFormat - MNC Format
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.PlmnServiceErrorBitmask - PLMN Service Error Bitmask
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.RxLevel - Rx Level
+type: int
+security: OEM
+nv: none
+
+WwanAdv.TxLevel - Tx power level
+type: int
+security: OEM
+nv: none
+
+WwanAdv.ChannelIdUL - Uplink Channel ID
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.PrlVersion - PRL Version
+type: uint
+security: OEM
+nv: none
+
+WwanAdv.SCClist - LTE SCC info
+<Cell ID>,<SINR>,<RSRP>,<RSRQ>,<DL Channel>,<Band>,<DL Bandwidth>
+type: buffer
+security: OEM
+nv: none
+
+WwanAdv.GStatus - Get 3g/4g network status
+type: string
+security: OEM
+nv: none
+
+WwanAdv.GStatus5g - Get 5g network status
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: NwSelect
+NwSelect.RegMode - NW Reg Mode
+type: enum - Unknown Manual Auto
+security: OEM
+nv: none
+
+NwSelect.Scan - NW Scan
+type: uint
+security: OEM
+nv: none
+
+NwSelect.CSGScan - CSG NW Scan
+type: uint
+security: OEM
+nv: none
+
+NwSelect.ScanStatus - NW Scan Status
+type: uint
+security: OEM
+nv: none
+
+NwSelect.ScanGet - Get NW Scan Results
+<name>,<PLMN>,<RAT>,<home flag>,<current flag>,<forbidden flag>
+type: buffer
+security: OEM
+nv: none
+
+NwSelect.CSGScanGet - Get CSG NW Scan Results
+<CSG id>,<MCC>,<MNC>,<name>,<category>,<signal strength>
+type: buffer
+security: OEM
+nv: none
+
+NwSelect.Automatic - Auto NW Reg
+type: string
+security: OEM
+nv: none
+
+NwSelect.Manual - Manual NW Reg
+type: string
+security: OEM
+nv: none
+
+NwSelect.NetSelEnabled - Manual NW Reg Allowed
+type: enum - Unknown Enabled Disabled
+security: OEM
+nv: none
+
+NwSelect.ManualNoCvg - Manual NW No Coverage
+type: bool
+security: OEM
+nv: none
+
+
+
+GROUP: Roaming
+Roaming.RoamingMode - Roaming Mode
+type: enum - HomeOnly Domestic AllNetworks
+security: OEM
+nv: ROAMING_MODE, modem
+
+Roaming.RoamingModeValid - Valid Roaming Mode
+type: uint
+security: OEM
+nv: none
+
+Roaming.DomRoamingGuard - Domestic Roaming Guard
+type: enum - NotForcedAndNotEnabled NotForcedAndEnabled ForcedAndNotEnabled ForcedAndEnabled
+security: OEM
+nv: none
+
+Roaming.IntlRoamingGuard - International Roaming Guard
+type: enum - NotForcedAndNotEnabled NotForcedAndEnabled ForcedAndNotEnabled ForcedAndEnabled
+security: OEM
+nv: none
+
+Roaming.RoamingERI - Enhanced Roaming Indicator
+type: uint
+security: OEM
+nv: none
+
+Roaming.RoamingType - Roaming Type
+type: enum - InHomeNetwork InDomRoamingNetwork InIntlRoamingNetwork
+security: OEM
+nv: none
+
+Roaming.OMARoamingCfg - OMA Roaming Configuration
+<dom_roaming_allowed>,<dom_roaming_forced>,<intl_roaming_allowed>,<intl_roaming_forced>,<dom_guard_enabled>,<dom_guard_forced>,<intl_guard_enabled>,<intl_guard_forced>
+type: buffer
+security: High
+nv: OMA_ROAMING_CFG
+
+Roaming.RoamingERITestMode - Enable ERI Test Mode
+type: uint
+security: OEM
+nv: ROAMING_ERI_TEST_MODE_ENABLED, apps
+
+Roaming.RoamMenuDisplay - UI Displays Roaming
+type: bool
+security: Low
+nv: ROAM_MENU_DISPLAY, modem
+
+Roaming.HomeOnly - Roam preference
+type: bool
+security: Low
+nv: MVNO_HOME_ONLY, modem
+
+
+
+GROUP: Nat
+Nat.NatEnabled - NAT is enabled
+type: uint
+security: High
+nv: NAT_ENABLED, apps
+
+Nat.NatEnable - NAT Enable/Disable
+type: uint
+security: High
+nv: none
+
+Nat.VpnPassEnabled - VPN passthrough
+type: uint
+security: OEM
+nv: NAT_VPN_PASS_ENABLE, apps
+
+Nat.DmzEnabled - DMZ is enabled
+type: uint
+security: OEM
+nv: NAT_DMZ_ENABLE, apps
+
+Nat.DmzIpAddr - DMZ IP address
+type: uint
+security: OEM
+nv: NAT_DMZ_IP_ADDRESS, apps
+
+Nat.PortForwardEnabled - Port Forward Enabled
+type: uint
+security: OEM
+nv: NAT_PORT_FWD_ENABLED, apps
+
+Nat.PortForwardAllowEntry - Port Forward Allowed Entries
+type: uint
+security: OEM
+nv: none
+
+Nat.PortForwardList - Port Forward List
+<label>,<IP addr>,<src port #>,<to port #>,<dest port #>,<protocol #>,<is range>
+type: buffer
+security: OEM
+nv: NAT_PORT_FWD_LIST
+
+Nat.VolatilePortForwardList - Volatile Port Forward List
+type: buffer
+security: High
+nv: none
+
+Nat.FirewallEnabled - Firewall Enabled
+type: uint
+security: OEM
+nv: NAT_FIREWALL_ENABLED, apps
+
+Nat.FirewallBlackListEnabled - Firewall Black List Enabled
+type: uint
+security: OEM
+nv: NAT_FIREWALL_BLACK_LIST_ENABLED, apps
+
+Nat.PortFilterWhiteList - Port Filter White List
+<label>,<start port #>,<end port #>,<protocol #>
+type: buffer
+security: OEM
+nv: NAT_PORT_FLT_WHITE_LIST
+
+Nat.PortFilterBlackList - Port Filter Black List
+<label>,<start port #>,<end port #>,<protocol #>
+type: buffer
+security: OEM
+nv: NAT_PORT_FLT_BLACK_LIST
+
+Nat.MssCap - TCP MSS cap to enforce
+type: uint
+security: Low
+nv: NAT_MSS_CAP, apps
+
+Nat.SipAlg - Enable/Disable SIP ALG
+type: bool
+security: Low
+nv: none
+
+
+
+GROUP: Power
+Power.AutoOffOnUsbRemovalEnabled - Autooff USB removal enable
+type: uint
+security: OEM
+nv: PM_AUTO_OFF_ON_USB_DIS_ENA, apps
+
+Power.AutoOnEnabled - Autoon enable
+type: uint
+security: OEM
+nv: PM_AUTO_ON_ENABLE, apps
+
+Power.AutoOffOnUsbRemovalTimer - Autooff USB removal tmr
+type: uint
+security: OEM
+nv: PM_AUTO_OFF_ON_USB_DIS_CND_TMR, apps
+
+Power.AutoOffOnAcIdleTimer - Autooff AC idle tmr
+type: uint
+security: OEM
+nv: PM_AUTO_OFF_ON_AC_IDLE_TMR, apps
+
+Power.AutoOffOnBattIdleTimer - Autooff BATT idle tmr
+type: uint
+security: OEM
+nv: PM_AUTO_OFF_ON_BATT_IDLE_TMR, apps
+
+Power.AutoOffOnUsbIdleTimer - Autooff USB idle tmr
+type: uint
+security: OEM
+nv: PM_AUTO_OFF_ON_USB_IDLE_TMR, apps
+
+Power.StandbyOnAcIdleTimer - Standby AC idle tmr
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_AC_IDLE_TMR, apps
+
+Power.StandbyOnBattIdleTimer - Standby BATT idle tmr
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_BATT_IDLE_TMR, apps
+
+Power.StandbyOnUsbIdleTimer - Standby USB idle tmr
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_USB_IDLE_TMR, apps
+
+Power.StandbyOnAcEthernetTimer - Inactivity timer to power down Ethernet port when on AC
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_AC_ETHERNET_TMR, apps
+
+Power.StandbyOnBattEthernetTimer - Inactivity timer to power down Ethernet port when on Battery
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_BATT_ETHERNET_TMR, apps
+
+Power.StandbyOnUsbEthernetTimer - Inactivity timer to power down Ethernet port when on USB
+type: uint
+security: OEM
+nv: PM_STANDBY_ON_USB_ETHERNET_TMR, apps
+
+Power.PowerState - Power state
+type: uint
+security: OEM
+nv: none
+
+Power.PowerStateDesc - Power state description
+type: string
+security: OEM
+nv: none
+
+Power.ResetReason - Reset Reason
+type: uint
+security: OEM
+nv: PM_RST_REASON, apps
+
+Power.ResetReasonDesc - Reset Reason description
+type: string
+security: OEM
+nv: none
+
+Power.WiFiOffOnPCUsb - WiFi turnoff on USB Connection
+type: uint
+security: OEM
+nv: PM_WLANTOFFUSBCON, apps
+
+Power.Shutdown - Shutdown/Reset
+type: uint
+security: OEM
+nv: none
+
+Power.PcTempState - State
+type: enum - Initializing Normal HighTemperatureWarning HighTemperatureCritical LowTemperatureCritical
+security: OEM
+nv: none
+
+Power.PcTempValue - Value
+type: uint
+security: OEM
+nv: none
+
+Power.PcVoltState - State
+type: enum - Initializing Normal LowVoltageWarning LowVoltageCritical HighVoltageCritical
+security: OEM
+nv: none
+
+Power.PcVoltValue - Value
+type: uint
+security: OEM
+nv: none
+
+Power.SmState - SM State
+type: enum - LowPowerMode Online Offline PowerOff EnteringLowPowerMode Initialization
+security: OEM
+nv: none
+
+Power.LpmForce - LPM Force
+type: uint
+security: High
+nv: none
+
+Power.PwrOffMode - Pwr Off Mode
+type: uint
+security: High
+nv: none
+
+Power.LpmPersistent - LPM Persistent
+type: uint
+security: High
+nv: none
+
+Power.Sleep - Sleep Enable
+type: uint
+security: High
+nv: BS_DEEP_SLEEP, apps
+
+Power.HostSleep - Host Sleep
+type: uint
+security: High
+nv: BS_HOST_SLEEP, apps
+
+Power.LPM - LPM/Online
+type: uint
+security: High
+nv: none
+
+Power.ResetRequired - Reset Required
+type: enum - NoResetRequired ProfileUpdated
+security: High
+nv: none
+
+Power.ChoiceOnUSB - Choice on USB
+type: enum - NoAction Prompt ChargeOnly ChargeTether
+security: OEM
+nv: PM_CHOICE_ON_USB, apps
+
+Power.ActionOnUSB - Action on USB
+type: enum - ChargeOnly ChargeTether
+security: OEM
+nv: none
+
+Power.WiFiOffOnTethered - WiFi turnoff on Tethered
+type: uint
+security: OEM
+nv: PM_WLANTOFFTETHERED, apps
+
+Power.ResetTime - Reset Time
+type: uint
+security: OEM
+nv: PM_RST_TIME, apps
+
+Power.ResetReasonHistory - History of power.ResetReason
+type: string
+security: High
+nv: none
+
+Power.StateHistory - History of power.state (event->state)
+type: string
+security: High
+nv: none
+
+Power.CurProfile - Current Power Profile
+type: uint
+security: OEM
+nv: PM_CUR_PROF, apps
+
+Power.ProfileNoBatt - Power Profile No-battery flag
+type: bool
+security: OEM
+nv: PM_PROF_NOBATT_FLAG, apps
+
+Power.Reboot - Reboot after timer expires
+type: uint
+security: High
+nv: none
+
+Power.Profile - Power profiles List
+<name>,<lcdtimer>,<wifirange>,<wifitimer>,<ethen>,<ethspeed>
+type: buffer
+security: OEM
+nv: PM_PROF_LIST
+
+
+
+GROUP: UI
+UI.DefaultLanguage - Default Language
+type: string
+security: OEM
+nv: DEFAULT_LANGUAGE, apps
+
+UI.SupportedLanguages - Supported Languages
+type: string
+security: OEM
+nv: SUPPORTED_LANGUAGES, apps
+
+UI.LanguageSelected - Selected Language
+type: bool
+security: OEM
+nv: LANGUAGE_SELECTED, apps
+
+UI.ShowAdvHelp - Show Advance Help
+type: bool
+security: OEM
+nv: ADVHELP_ENABLED, apps
+
+UI.UseMetricSystem - Use Metric System
+type: bool
+security: OEM
+nv: USEMETRIC_SYSTEM, apps
+
+UI.StealthEn - UI Stealth Enabled
+type: bool
+security: OEM
+nv: UI_STEALTH_ENABLED, apps
+
+UI.PromptActivation - Show activation screen
+type: bool
+security: OEM
+nv: UI_PROMPTACTIVATION, apps
+
+UI.ServerDaysLeftHide - Hide Days Left
+type: bool
+security: OEM
+nv: UI_SERVERDAYSLEFTHIDE, apps
+
+UI.DisableSettingsOnLCD - Enable / Disable UI settings on LCD
+type: bool
+security: OEM
+nv: UI_DISABLE_SETTINGS_ON_LCD, apps
+
+UI.RoundDaysLeftUp - Round days left calculations up
+type: bool
+security: OEM
+nv: UI_ROUND_DAYS_LEFT_UP, apps
+
+UI.DemoMode - Use demo mode in UI
+type: bool
+security: OEM
+nv: UI_DEMO_MODE, apps
+
+UI.NvupRebootRequired - NVUP reboot required
+type: bool
+security: OEM
+nv: none
+
+
+
+GROUP: Lcd
+Lcd.BacklightEnabled - Backlight enabled
+type: bool
+security: OEM
+nv: LCD_BL_ENABLED, apps
+
+Lcd.BacklightInactTmoBatt - Inactivity Timeout on Battery
+type: uint
+security: OEM
+nv: LCD_BL_TMO_BATT, apps
+
+Lcd.BacklightInactTmoAC - Inactivity Timeout on Charger
+type: uint
+security: OEM
+nv: LCD_BL_TMO_AC, apps
+
+Lcd.BacklightInactTmoUSB - Inactivity Timeout on USB
+type: uint
+security: OEM
+nv: LCD_BL_TMO_USB, apps
+
+Lcd.BacklightSmsTmo - Time on after SMS received
+type: uint
+security: OEM
+nv: LCD_BL_TMO_SMS, apps
+
+Lcd.BacklightAlerTmo - Time On after Alert raised
+type: uint
+security: OEM
+nv: LCD_BL_TMO_ALERT, apps
+
+Lcd.BacklightOvrMode - Backlight Override Mode
+type: enum - Inactive Off On OnWithTimeout
+security: OEM
+nv: none
+
+Lcd.BacklightOvrTmo - Backlight Override Timeout
+type: uint
+security: OEM
+nv: none
+
+Lcd.BacklightOn - Backlight Status
+type: uint
+security: OEM
+nv: none
+
+Lcd.TouchPosition - Touch Position
+type: uint
+security: OEM
+nv: none
+
+Lcd.FactoryTest - Factory Test
+type: string
+security: High
+nv: none
+
+Lcd.MaxBrightnessStates - Max brightness states in use
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelZero - LCD brightness level 0
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelOne - LCD brightness level 1
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelTwo - LCD brightness level 2
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelThree - LCD brightness level 3
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelFour - LCD brightness level 4
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelFive - LCD brightness level 5
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelSix - LCD brightness level 6
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessLevelSeven - LCD brightness level 7
+type: uint
+security: OEM
+nv: none
+
+Lcd.BrightnessMapValOnBatt - Mapped brightness on BATT
+type: uint
+security: OEM
+nv: LCD_BL_MAP_VAL_ONBATT, apps
+
+Lcd.BrightnessMapValOnUSB - Mapped brightness on USB
+type: uint
+security: OEM
+nv: LCD_BL_MAP_VAL_ONUSB, apps
+
+Lcd.BrightnessMapValOnAC - Mapped brightness on AC
+type: uint
+security: OEM
+nv: LCD_BL_MAP_VAL_ONAC, apps
+
+Lcd.LockScreenEnable - Enable LCD lock screen
+type: bool
+security: OEM
+nv: LCD_LOCKSCREEN_ENABLE, apps
+
+Lcd.LockScreenUsePin - Use PIN with LCD lock screen
+type: bool
+security: OEM
+nv: LCD_LOCKSCREEN_USE_PIN, apps
+
+Lcd.LockScreenPin - Lock screen PIN
+type: string
+security: Low
+nv: LCD_LOCKSCREEN_PIN, apps
+
+Lcd.LockScreenValidatePin - Validate lock screen PIN
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: Button
+Button.PowerBtnEv - Power Event
+type: enum - Pushed Released Clicked DoubleClicked HoldRelease Hold1 Hold2 Hold3 Hold4 Hold5 Hold6
+security: OEM
+nv: none
+
+Button.TouchScrEv - Touch Event
+type: enum - Pushed Released Clicked DoubleClicked HoldRelease Hold1 Hold2 Hold3 Hold4 Hold5 Hold6
+security: OEM
+nv: none
+
+Button.KeyLock - Key Locks State
+type: enum - Unlocked Locked
+security: OEM
+nv: none
+
+Button.PowerBtnHold - Power Button Hold Time
+type: uint
+security: OEM
+nv: none
+
+Button.WpsBtnEv - WPS Event
+type: enum - Pushed Released Clicked DoubleClicked HoldRelease Hold1 Hold2 Hold3 Hold4 Hold5 Hold6
+security: OEM
+nv: none
+
+Button.RstBtnEv - Reset Event
+type: enum - Pushed Released Clicked DoubleClicked HoldRelease Hold1 Hold2 Hold3 Hold4 Hold5 Hold6
+security: OEM
+nv: none
+
+
+
+GROUP: Webd
+Webd.WebSessionCount - Current count of web sessions
+type: uint
+security: OEM
+nv: none
+
+Webd.OwnerModeSupported - Owner mode feature support
+type: bool
+security: Low
+nv: OWNER_MODE_SUPPORTED, apps
+
+Webd.OwnerModeEnabled - Owner mode feature switch
+type: bool
+security: Low
+nv: OWNER_MODE_ENABLED, apps
+
+Webd.OwnerPassword - Owner Password
+type: string
+security: Low
+nv: OWNERPASS, apps
+
+Webd.AdminPassword - Admin Password
+type: string
+security: High
+nv: ADMINPASS, apps
+
+Webd.OwnerDefaultLevel - Owner default access level (UserRole)
+type: enum - Guest Owner Admin Local
+security: High
+nv: OWNER_DEFAULT_LEVEL, apps
+
+Webd.OwnerCustomizationsList - Owner access customizations (symbol,{NA|RO|WO|RW})
+type: uint
+security: High
+nv: none
+
+Webd.OwnerCustomizationsChanged - Owner access customizations changed
+type: bool
+security: High
+nv: none
+
+Webd.HideAdminPassword - Hide Admin Password
+type: bool
+security: High
+nv: WEBD_HIDE_ADMIN_PASSWORD, apps
+
+Webd.HintAnswer - Hint answer input
+type: string
+security: High
+nv: WEBD_HINT_ANSWER, apps
+
+Webd.HintNumber - Hint number used
+type: uint
+security: Low
+nv: WEBD_HINT_NUMBER
+
+Webd.DefaultPassword - Default Password
+type: string
+security: High
+nv: DEFAULTPASS, apps
+
+Webd.MaxLoginFailures - Maximum Allowed Login Attempt Failures
+type: uint
+security: High
+nv: MAX_LOGIN_FAILURES, apps
+
+Webd.webdUpdateSupported - Webd Update Support
+type: bool
+security: High
+nv: DM_DEVICE_ENABLE
+
+Webd.SessionIdWorkaroundEnabled - Session id workaround enabled
+type: bool
+security: High
+nv: SESSIONID_WORKAROUND_ENABLED, apps
+
+Webd.Gcdump - gcdump info
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: Custom
+Custom.SetUpCompleted - Setup completed
+type: uint
+security: OEM
+nv: CUSTOM_SETUP_COMPLETED, apps
+
+Custom.TCAAccepted - TCA accepted
+type: uint
+security: OEM
+nv: CUSTOM_TCA_ACCEPTED, apps
+
+Custom.showTutorial - Show Tutorial
+type: uint
+security: OEM
+nv: CUSTOM_SHOW_TUTORIAL, apps
+
+Custom.showWebInfo - Show web page info
+type: uint
+security: OEM
+nv: CUSTOM_SHOW_WEBINFO, apps
+
+Custom.CarrierId - Carrier ID
+type: uint
+security: OEM
+nv: CARRIERID, apps
+
+Custom.CarrierSim - SIM matches Carrier
+type: enum - Unknown Carrier NonCarrier
+security: OEM
+nv: none
+
+Custom.PCSCDisable - PCSC Disable
+type: uint
+security: Low
+nv: CUST_PCSCDISABLE, apps
+
+Custom.FactoryTest - Factory Test bit-string: for each bit, X=not tested, 0=failed, 1=passed.
+Use '?' to leave a bit unchanged when setting.
+type: string
+security: High
+nv: none
+
+Custom.DebugLogPrefix - Debug logfile prefix: <empty>=disable logging, prefix=log to /mnt/userrw/logs/prefixNNNN.log
+type: string
+security: Low
+nv: LOG_PREFIX, apps
+
+Custom.DebugLogLevel - Debug logging enable-mask: 1=Low, 2=Med, 4=High, 8=Error
+type: uint
+security: Low
+nv: LOG_LEVEL, apps
+
+Custom.DebugKlogFilter - Debug kernel log filter
+type: string
+security: Low
+nv: none
+
+Custom.DxInetPort - DX Inet Port (0=disabled)
+type: uint
+security: High
+nv: DX_INET_PORT, apps
+
+Custom.DeviceActivated - Device Activated
+type: bool
+security: Low
+nv: CUST_DEVICE_ACTIVATED, apps
+
+Custom.MvnoProvidername - Mvno Providername
+type: string
+security: Low
+nv: MVNO_PROVIDERNAME, apps
+
+Custom.ATWifiEnable - AT over Wifi Enabled
+type: bool
+security: OEM
+nv: AT_WIFI_ENABLE, apps
+
+Custom.DMWifiEnable - DM over Wifi Enabled
+type: bool
+security: OEM
+nv: DM_WIFI_ENABLE, apps
+
+Custom.RDEnable - RD Enable
+type: uint
+security: High
+nv: CUST_RDENABLE, apps
+
+Custom.LogEnabled - Logging Enabled
+type: bool
+security: High
+nv: LOG_ENABLED, apps
+
+Custom.HiddenMenuEnabled - Hidden menu enable/disable
+type: bool
+security: High
+nv: HIDDENMENU_ENABLE, apps
+
+Custom.SeccEnable - SECC Enable
+type: uint
+security: High
+nv: CUST_SECCENABLE, apps
+
+
+
+GROUP: DataUsage
+DataUsage.BillDatePref - Billing Day
+type: uint
+security: OEM
+nv: DATAUSE_BILL_DATE_PREF, apps
+
+DataUsage.BillDateNext - Next Billing Date (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_NEXT_BILL_DATE, apps
+
+DataUsage.BillDateNextIntl - Next billing date roaming (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_GEN_BILLDATENEXT_INTL, apps
+
+DataUsage.BillTimeLeft - Time to Billing Day (s)
+type: uint
+security: OEM
+nv: none
+
+DataUsage.DataTransferred - Data Transferred Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_TRANSFERRED, apps
+
+DataUsage.DataLimit - Data Limit
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LIMIT, apps
+
+DataUsage.DataLimitValid - Data Limit Valid
+type: bool
+security: OEM
+nv: DATAUSE_DATA_LIMIT_VALID, apps
+
+DataUsage.DataTransferredRoaming - Data Transferred Roaming
+type: uint64
+security: OEM
+nv: DATAUSE_ROAMING_DATA_TRANSFERRED, apps
+
+DataUsage.DataLimitRoaming - Data Limit Roaming
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LIMIT_ROAMING, apps
+
+DataUsage.DataLimitRoamingValid - Data Limit Roaming Valid
+type: bool
+security: OEM
+nv: DATAUSE_DATA_LIMIT_ROAMING_VALID, apps
+
+DataUsage.ServerDataTransferred - Data count at server
+type: uint64
+security: OEM
+nv: DATAUSE_SRV_DATAXFERRED, apps
+
+DataUsage.ServerDataTransferredIntl - Data count at server roaming
+type: uint64
+security: OEM
+nv: DATAUSE_SRV_DATAXFERRED_INTL, apps
+
+DataUsage.ServiceLastUpdateTime - Server Last Update Time (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_SRV_LAST_UPDATE, apps
+
+DataUsage.ServiceLastUpdateTimeIntl - Service last update time roaming
+type: uint
+security: OEM
+nv: DATAUSE_SRV_LAST_UPDATE_INTL, apps
+
+DataUsage.Reset - Reset Data Usage. 1: xfer count, 255: all
+type: uint
+security: OEM
+nv: none
+
+DataUsage.LastReset - Time Last reset
+type: uint
+security: OEM
+nv: DATAUSE_DATA_USE_LAST_RESET, apps
+
+DataUsage.ICCID - Last ICCID
+type: string
+security: Low
+nv: DATAUSE_ICCID, apps
+
+DataUsage.AccountType - Account Type
+type: enum - Unknown Postpaid Prepaid PrepaidAttGoPhone
+security: Low
+nv: ACCOUNT_TYPE, apps
+
+DataUsage.AccountTypeIntl - Account Type roaming
+type: enum - Unknown Postpaid Prepaid PrepaidAttGoPhone
+security: OEM
+nv: ACCOUNT_TYPE_INTL, apps
+
+DataUsage.ServiceAccountType - Data server account type
+type: string
+security: OEM
+nv: DATAUSE_SRV_ACCOUNT_TYPE, apps
+
+DataUsage.ServiceSubAccountType - Data server sub-account type
+type: string
+security: OEM
+nv: DATAUSE_SRV_SUB_ACCOUNT_TYPE, apps
+
+DataUsage.BillDateStart - Billing start date (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_BILLDATESTART, apps
+
+DataUsage.BillDateStartIntl - Billing start date roaming (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_BILLDATESTART_INTL, apps
+
+DataUsage.DataWarnLevel - Data Threshhold
+type: uint
+security: OEM
+nv: DATAUSE_DATA_WARN_LEVEL, apps
+
+DataUsage.UpdateInterval - Update Interval
+type: uint
+security: OEM
+nv: DATAUSE_UPDATE_INTERVAL, apps
+
+DataUsage.UserDisplayFormat - Billing or Session Data Usage
+type: uint
+security: OEM
+nv: DATAUSE_USER_DISPLAY_FORMAT, apps
+
+DataUsage.BinSizeTime - Data bin size (s)
+type: uint
+security: OEM
+nv: DATAUSE_BIN_SIZE_TIME, apps
+
+DataUsage.ValidItemsMask - Valid Items Mask
+type: uint
+security: High
+nv: DATAUSE_VALID_ITEMS_MASK, apps
+
+DataUsage.TestModeMask - Test Mode Mask: 1-REMEMBERIDOFF, 2-FULL_RESP, 3-FULL_REQ, 4-DIS_PNS_CHECK, 5-BYPASS_PHN, 6-OP_STATE, 7-REDO_START
+type: uint
+security: High
+nv: none
+
+DataUsage.ServerDataRemaining - Number of bytes remaining on plan according to server
+type: uint64
+security: Low
+nv: DATAUSE_SRV_DATA_REMAINING, apps
+
+DataUsage.ServerMsisdn - Server Msisdn
+type: string
+security: Low
+nv: DATAUSE_SRV_MSISDN, apps
+
+DataUsage.ServerDaysLeft - Number of days left on plan according to server
+type: uint
+security: Low
+nv: DATAUSE_SRV_DAYS_LEFT, apps
+
+DataUsage.ServerDataUnits - Server Data Units Specified
+type: enum - NotSpecified KB MB GB TB
+security: Low
+nv: DATAUSE_DATA_UNITS, apps
+
+DataUsage.BillReadyDate - Bill Ready Date (UTC)
+type: uint
+security: Low
+nv: DATAUSE_BILL_READY_DATE, apps
+
+DataUsage.BillDueDate - Bill Due Date (UTC)
+type: uint
+security: Low
+nv: DATAUSE_BILL_DUE_DATE, apps
+
+DataUsage.DataWarnThreshold - Data Warning Threshold (bytes)
+type: uint64
+security: Low
+nv: DATAUSE_DATA_WARN_THRESHOLD, apps
+
+DataUsage.DataWarnEnable - Data Warning Threshold Enable
+type: bool
+security: Low
+nv: DATAUSE_DATA_WARN_ENABLE, apps
+
+DataUsage.ServerShapingEnabled - Indicates carrier has shaping enabled
+type: bool
+security: Low
+nv: DATAUSE_SRV_SHAPING_ENABLED, apps
+
+DataUsage.ServerShapingApplied - Type of shaping attached to account
+type: string
+security: Low
+nv: DATAUSE_SRV_SHAPING_APPLIED, apps
+
+DataUsage.ServerShapingReason - Type of shaping currently used on account
+type: string
+security: Low
+nv: DATAUSE_SRV_SHAPING_REASON, apps
+
+DataUsage.DisableAutoReset - Disables monthly data count reset
+type: bool
+security: OEM
+nv: DATAUSE_DISABLE_AUTO_RESET, apps
+
+DataUsage.MarketId - Customer market ID
+type: string
+security: Low
+nv: DATAUSE_MARKET_ID, apps
+
+DataUsage.SubMarketId - Customer sub-market ID
+type: string
+security: Low
+nv: DATAUSE_SUB_MARKET_ID, apps
+
+DataUsage.PlanCode - Plan code
+type: string
+security: Low
+nv: DATAUSE_PLAN_CODE, apps
+
+DataUsage.PlanDescription - Plan description
+type: string
+security: OEM
+nv: DATAUSE_PLAN_DESCRIPTION, apps
+
+DataUsage.PlanSize - Plan size
+type: uint64
+security: OEM
+nv: DATAUSE_PLAN_SIZE, apps
+
+DataUsage.PlanExtraInfo - Plan extra info Type
+type: enum - None MSA
+security: Low
+nv: DATAUSE_PLAN_EXTRA_INFO, apps
+
+DataUsage.GenFallbackSupported - Enables generic data usage fallback
+type: bool
+security: Low
+nv: DATAUSE_GEN_FALLBACK, apps
+
+DataUsage.UseGenericAlgorithm - Use generic data usage algorithm
+type: bool
+security: Low
+nv: DATAUSE_USE_GENERIC, apps
+
+DataUsage.AlgorithmInUse - Data usage algorithm type in use
+type: uint
+security: OEM
+nv: none
+
+DataUsage.DataLimitEnabled - Data limit enabled
+type: bool
+security: OEM
+nv: DATAUSE_DATALIM_ENABLED, apps
+
+DataUsage.DataLimitRoamingEnabled - Roaming data limit enabled
+type: bool
+security: OEM
+nv: DATAUSE_DATALIM_ROAMING_ENABLED, apps
+
+DataUsage.AlertDataLimitWarning - Alert data usage reached high data warning
+type: uint
+security: OEM
+nv: none
+
+DataUsage.AlertDataLimitExceeded - Alert data usage exceeded data limit
+type: uint
+security: OEM
+nv: none
+
+
+
+GROUP: RAT
+RAT.DataRxLTEBilling - LTE Received Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LTE_RX_BILL, apps
+
+RAT.DataTxLTEBilling - LTE Transferred Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LTE_TX_BILL, apps
+
+RAT.DataRxLTELife - Lifetime LTE Received Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LTE_RX_LIFE, apps
+
+RAT.DataTxLTELife - Lifetime LTE Transferred Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_LTE_TX_LIFE, apps
+
+RAT.DataRxCDMABilling - CDMA Received Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_CDMA_RX_BILL, apps
+
+RAT.DataTxCDMABilling - CDMA Transferred Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_CDMA_TX_BILL, apps
+
+RAT.DataRxCDMALife - Lifetime CDMA Received Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_CDMA_RX_LIFE, apps
+
+RAT.DataTxCDMALife - Lifetime CDMA Transferred Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_CDMA_TX_LIFE, apps
+
+RAT.DataRxGWBilling - GW Received Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_GW_RX_BILL, apps
+
+RAT.DataTxGWBilling - GW Transferred Bytes Since Reset
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_GW_TX_BILL, apps
+
+RAT.DataRxGWLife - Lifetime GW Received Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_GW_RX_LIFE, apps
+
+RAT.DataTxGWLife - Lifetime GW Transferred Bytes
+type: uint64
+security: OEM
+nv: DATAUSE_DATA_GW_TX_LIFE, apps
+
+
+
+GROUP: Remote
+Remote.Enabled - Enable remote server data usage query
+type: bool
+security: OEM
+nv: DATAUSE_SRV_ENABLED, apps
+
+Remote.ServiceLastAttempted - Service Last Attempted (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_SRV_LAST_ATTEMPTED, apps
+
+Remote.ServiceLastSucceeded - Service Last Succeeded (UTC)
+type: uint
+security: OEM
+nv: DATAUSE_SRV_LAST_SUCCEEDED, apps
+
+Remote.ServiceLastErrorCode - Service Last Error Code
+type: uint
+security: OEM
+nv: DATAUSE_SRV_LAST_ERROR_CODE, apps
+
+Remote.ServiceName - Service Name
+type: string
+security: High
+nv: DATAUSE_SRV_NAME, apps
+
+Remote.ServicePassword - Service Password
+type: string
+security: High
+nv: DATAUSE_SRV_PASSWORD, apps
+
+Remote.ServiceDeviceModel - DataUsage Device Model
+type: string
+security: Low
+nv: DATAUSE_SRV_MODEL_NAME, apps
+
+Remote.ServiceUrl - Service URL
+type: string
+security: High
+nv: DATAUSE_SRV_URL, apps
+
+Remote.ServiceUrlForm - Un-filled Service URL form
+type: string
+security: High
+nv: DATAUSE_SRV_URL_FORM, apps
+
+Remote.SecurityString - Security string for use with server authentication
+type: string
+security: High
+nv: DATAUSE_SECURITY_STRING, apps
+
+Remote.OverrideRoaming - Override Roaming
+type: bool
+security: OEM
+nv: DATAUSE_OVERRIDE_ROAMING, apps
+
+Remote.ServiceStartQuery - Service Start Query
+type: uint
+security: High
+nv: none
+
+Remote.ServiceGenerateURL - DataUsage Service Generate URL
+type: uint
+security: High
+nv: none
+
+Remote.ServerDataValidState - Local stored data validity states
+type: enum - Valid ValidQueryFailed Invalid
+security: OEM
+nv: DATAUSE_SRV_DATA_VALID_STATE, apps
+
+Remote.ServiceAppId - Service AppID
+type: string
+security: High
+nv: DATAUSE_SRV_AUTH_APPID, apps
+
+Remote.ServiceAuthUrl - Service Authorization URL
+type: string
+security: High
+nv: DATAUSE_SRV_AUTH_URL, apps
+
+Remote.ServiceReqId - Service Request ID
+type: string
+security: Low
+nv: none
+
+Remote.ServiceAuthCode - Service Authorization Code
+type: string
+security: High
+nv: none
+
+Remote.ServiceToken - Service Token
+type: string
+security: High
+nv: DATAUSE_SRV_TOKEN, apps
+
+Remote.ServiceTokenStatus - Service Token Status
+type: enum - Unknown Valid Invalid Busy Locked
+security: Low
+nv: none
+
+Remote.ServiceTokenExpiry - Service Token Expiry Time (UTC)
+type: uint
+security: High
+nv: DATAUSE_SRV_TOKEN_EXPIRY, apps
+
+Remote.ServiceAuthState - Service Authorization State
+type: enum - NotInUse Started AcInitFail AcGenReq AcDelayed AcGenFail AcReplyFail AcReplyFailSLock AcReplyFailHLock AcWaitReply WaitForSms SmsTimeoutFail SmsReceived TkInitFail TkGenReq TkDelayed TkGenFail WaitForTk TknReplyFail TkReceived TkReady Failure
+security: High
+nv: none
+
+Remote.ServiceAuthStartQuery - Service Authorization Start Query
+type: uint
+security: High
+nv: none
+
+Remote.PrepaidServiceUrlForm - Un-filled prepaid service URL form
+type: string
+security: High
+nv: DATAUSE_SRV_PREPAID_URL_FORM, apps
+
+Remote.ServerErrorCode - Error code returned from server
+type: string
+security: Low
+nv: DATAUSE_SRV_ERROR_CODE, apps
+
+Remote.ServiceUrlForm2 - Service 2 URL template
+type: string
+security: High
+nv: DATAUSE_SRV_URL_FORM_2, apps
+
+Remote.ServiceUrlForm3 - Service 3 URL template
+type: string
+security: High
+nv: DATAUSE_SRV_URL_FORM_3, apps
+
+Remote.ServiceUrlForm4 - Service 4 URL template
+type: string
+security: High
+nv: DATAUSE_SRV_URL_FORM_4, apps
+
+Remote.ServiceUrlForm5 - Service 5 URL template
+type: string
+security: High
+nv: DATAUSE_SRV_URL_FORM_5, apps
+
+Remote.DisableStartupQuery - Disable startup server queries
+type: bool
+security: High
+nv: DATAUSE_DISABLE_STARTUP_QUERY, apps
+
+Remote.BypassSslCheck - Bypass SSL certificate check
+type: bool
+security: High
+nv: DATAUSE_BYPASS_SSL_CHECK, apps
+
+Remote.ServiceVersion - Service Version
+type: string
+security: High
+nv: DATAUSE_SRV_VERSION, apps
+
+Remote.ServerQueryRequest - Start Server Data Query (UI)
+type: uint
+security: Low
+nv: none
+
+Remote.ServerQueryRequestToken - Request new auth token (UI)
+type: uint
+security: High
+nv: none
+
+Remote.SrvMsgEn - Enable server messages
+type: uint
+security: High
+nv: DATAUSE_SRV_MSG_EN, apps
+
+
+
+GROUP: Prepaid
+Prepaid.PrepaidAccountState - Prepaid Account State
+type: enum - Hot Warm PreActive Invalid Unknown
+security: OEM
+nv: PREPAID_ACCOUNT_STATE, apps
+
+Prepaid.PrepaidStackedPlans - Prepaid Stacked Plans
+type: uint
+security: OEM
+nv: PREPAID_STACKED_PLANS, apps
+
+Prepaid.AlertPrepaidNoDataPlan - Alert Prepaid No Data Plan
+type: uint
+security: OEM
+nv: none
+
+Prepaid.PrepaidStackedPlanIntl - Prepaid stacked plans roaming
+type: uint
+security: OEM
+nv: PREPAID_STACKED_PLANS_INTL, apps
+
+Prepaid.ServerLowBalance - Indicate if the low threshold value is reached
+type: bool
+security: Low
+nv: DATAUSE_SRV_LOW_BALANCE, apps
+
+Prepaid.RechargeSiteUrl - Recharge Site URL when low threshold value is reached
+type: string
+security: Low
+nv: DATAUSE_RECHARGE_SITE_URL, apps
+
+
+
+GROUP: Share
+Share.ShareEnabled - Mobile Share is enabled
+type: bool
+security: OEM
+nv: DATAUSE_SHARE_ENABLED, apps
+
+Share.ShareDataTransferredOthers - Mobile Share data transferred others
+type: uint64
+security: OEM
+nv: DATAUSE_SHARE_DATAXFERRED_OTHERS, apps
+
+Share.ShareServiceLastUpdateTime - Service last update time Mobile Share
+type: uint
+security: OEM
+nv: DATAUSE_SHARE_SRV_LAST_UPDATE, apps
+
+Share.ShareMaxMembers - Max num of of members on share plan
+type: uint
+security: OEM
+nv: DATAUSE_SHARE_MAX_MEMBERS, apps
+
+
+
+GROUP: Pns
+Pns.PnsSupported - Push notifications supported
+type: bool
+security: High
+nv: PNS_SUPPORTED, apps
+
+Pns.PnsActive - Push notifications active
+type: bool
+security: Low
+nv: none
+
+Pns.PnsStartQuery - PNS Start Query
+type: uint
+security: High
+nv: none
+
+Pns.PnsLastAttempted - PNS Last Attempted (UTC)
+type: uint
+security: Low
+nv: none
+
+Pns.PnsLastSucceeded - PNS Last Succeeded (UTC)
+type: uint
+security: Low
+nv: none
+
+Pns.PnsLastErrorCode - PNS Last Error Code
+type: uint
+security: Low
+nv: none
+
+Pns.PnsUrl - PNS URL
+type: string
+security: High
+nv: PNS_SRV_URL, apps
+
+Pns.PnsRegList - PNS Reg/Dereg Info
+<regstatus>,<timestamp>,<regtype>,<notifsrvtype>,<tokensize>,<tokenlocation>
+type: buffer
+security: High
+nv: none
+
+Pns.PnsExtraNotifTime - PNS extra notif time
+type: uint
+security: Low
+nv: PNS_EXTRA_TIME_TIME, apps
+
+
+
+GROUP: Services
+Services.AddNeeded - Additional data service needed
+type: bool
+security: Low
+nv: none
+
+Services.RequestStatus - Change service request status
+type: enum - Unknown None InProgress Success Fail
+security: Low
+nv: none
+
+Services.AvailableList - Available services list
+<code>,<display_name>,<alt_display_name>,<fee>
+type: buffer
+security: High
+nv: none
+
+Services.RequestStr - Change request string
+"code,pin"
+type: string
+security: High
+nv: none
+
+
+
+GROUP: Lbs
+Lbs.Supported - LBS supported
+type: uint
+security: Low
+nv: CUST_GPSENABLE, apps
+
+Lbs.Enabled - LBS enabled
+type: uint
+security: OEM
+nv: LBS_ENABLED, apps
+
+Lbs.TCAaccepted - LBS TCA accepted by customer (1=yes, 0=no)
+type: uint
+security: OEM
+nv: LBS_TCA_ACCEPTED, apps
+
+Lbs.MapService - Map service
+type: enum - Google Yahoo MapQuest Bing
+security: OEM
+nv: LBS_MAP_SERVICE, apps
+
+Lbs.Start - Session control (1=start, 0=stop)
+type: uint
+security: OEM
+nv: none
+
+Lbs.StartMode - Automatic or manual Session start
+type: enum - Manual Automatic
+security: OEM
+nv: LBS_STARTMODE, apps
+
+Lbs.Active - Session active (1=yes, 0=no)
+type: uint
+security: OEM
+nv: none
+
+Lbs.FixMode - Tracking mode
+type: enum - Tracking Single
+security: OEM
+nv: LBS_FIX_MODE, apps
+
+Lbs.FixAvail - Fix available
+type: uint
+security: OEM
+nv: none
+
+Lbs.FixError - Fix error
+type: int
+security: OEM
+nv: none
+
+Lbs.FixType - Fix type
+type: enum - unknown StandAlone MSBased MSAssisted CellID
+security: OEM
+nv: LBS_FIX_TYPE, apps
+
+Lbs.FixRate - Fix rate in seconds
+type: uint
+security: OEM
+nv: LBS_FIX_RATE, apps
+
+Lbs.FixTime - Fix time in seconds (since Jan 6th, 1980)
+type: string
+security: OEM
+nv: none
+
+Lbs.FixCount - Number of GPS fixes
+type: uint
+security: OEM
+nv: LBS_FIX_COUNT, apps
+
+Lbs.SatelliteCnt - Number of satellites in fix
+type: uint
+security: OEM
+nv: none
+
+Lbs.Latitude - Latitude position in degrees (-90.0 to +90.0)
+type: string
+security: OEM
+nv: none
+
+Lbs.Longitude - Longitude position in degrees (-180.0 to +180.0)
+type: string
+security: OEM
+nv: none
+
+Lbs.Altitude - Altitude in meters
+type: string
+security: OEM
+nv: none
+
+Lbs.Speed - Speed in meters/sec
+type: string
+security: OEM
+nv: none
+
+Lbs.Direction - Direction in degrees (0.0 to 359.99)
+type: string
+security: OEM
+nv: none
+
+Lbs.Performance - Maximum time to produce a fix in seconds
+type: uint
+security: OEM
+nv: LBS_PERFORMANCE, apps
+
+Lbs.Accuracy - GPS Fix Accuracy
+type: string
+security: OEM
+nv: none
+
+Lbs.AssistClear - Clear GPS Assisted Data
+type: enum - Cold Warm
+security: OEM
+nv: none
+
+Lbs.AssistClearWarmDef - Definition of 'Warm' clear of GPS Assisted Data
+type: uint64
+security: OEM
+nv: LBS_CLEARWARMDEF, apps
+
+Lbs.XtraEnable - StandAlone mode: XTRA enable (1=yes, 0=no)
+type: uint
+security: OEM
+nv: XTRA_ENABLED, apps
+
+Lbs.XtraDataDownld - StandAlone mode: XTRA Data Download (manual start)
+type: uint
+security: OEM
+nv: none
+
+Lbs.XtraDataDownldCnt - StandAlone mode: XTRA Data Download Count
+type: uint
+security: OEM
+nv: none
+
+Lbs.XtraDataStatus - StandAlone mode: XTRA Data status
+type: enum - unknown Valid BadCRC GPSbusy DownloadFailed Badrange Invalid GPSsubsystemErr PDPcontextFail XTRAserverAccessErr XTRAserverRetErr
+security: OEM
+nv: none
+
+Lbs.XtraTimeStatus - StandAlone mode: XTRA Time status
+type: enum - Invalid Valid
+security: OEM
+nv: none
+
+Lbs.ProxyEnable - NMEA Proxy enable (1=yes, 0=no)
+type: uint
+security: OEM
+nv: CUST_NMEAENABLE, apps
+
+Lbs.ProxyType - NMEA Proxy Port Type (TCP, USB gadget)
+type: enum - TCP USB
+security: OEM
+nv: LBS_PROXYTYPE, apps
+
+Lbs.ProxyPort - NMEA Proxy TCP Port number
+type: uint
+security: OEM
+nv: LBS_PROXYPORT, apps
+
+Lbs.ProxyClients - Number of Proxy clients
+type: uint
+security: OEM
+nv: none
+
+Lbs.Debug - Print debug info OR send QMI-LOC message (example: 3B is get lock)
+type: string
+security: OEM
+nv: none
+
+
+
+GROUP: Sms
+Sms.Supported - SMS supported
+type: uint
+security: Low
+nv: SMS_SUPPORTED, apps
+
+Sms.Enabled - SMS enabled
+type: uint
+security: OEM
+nv: SMS_ENABLED, apps
+
+Sms.GetMessage - List of SMS messages
+<read flag>,<sms id #>,<timestamp>,<sender>,<message text>
+type: buffer
+security: OEM
+nv: none
+
+Sms.DeleteMsg - Delete one SMS
+type: uint
+security: OEM
+nv: none
+
+Sms.DeleteAll - Delete all SMS
+type: uint
+security: OEM
+nv: none
+
+Sms.MarkRead - Mark SMS <tag> as read
+type: uint
+security: OEM
+nv: none
+
+Sms.MemFull - Alert - SMS memory full
+type: uint
+security: OEM
+nv: none
+
+Sms.Ready - SMS ready status
+type: uint
+security: OEM
+nv: none
+
+Sms.TransMessage - List of SMS not on SIM (class 0)
+<sms id #>,<timestamp>,<sender>,<message text>
+type: buffer
+security: OEM
+nv: none
+
+Sms.UnreadMsgCnt - Number of unread SMS
+type: uint
+security: OEM
+nv: none
+
+Sms.ImsSmsFormat - IMS SMS Format Value: 0-CDMA,1-3GPP
+type: uint
+security: OEM
+nv: none
+
+Sms.SendSupported - SMS send supported
+type: uint
+security: Low
+nv: SMS_SEND_SUPPORTED, apps
+
+Sms.SendEnabled - SMS send enabled
+type: uint
+security: OEM
+nv: SMS_SEND_ENABLED, apps
+
+Sms.SendMsg - <receiver>,<enc>,<length>,<clientid>,<msgid>,<status>,<errordode>,<timestamp>,<message text>
+type: buffer
+security: OEM
+nv: none
+
+Sms.AlertSupported - SMS alert supported
+type: uint
+security: Low
+nv: SMS_ALERT_SUPPORTED, apps
+
+Sms.AlertEnabled - SMS alert enabled
+type: uint
+security: OEM
+nv: SMS_ALERT_ENABLED, apps
+
+Sms.AlertCfgList - <alert category>,<enable>
+type: buffer
+security: OEM
+nv: SMS_ALERT_CFG_LIST
+
+Sms.AlertNumList - alert nums with comma seperator
+type: string
+security: OEM
+nv: SMS_ALERT_NUM_LIST, apps
+
+
+
+GROUP: Fota
+Fota.FotaState - FOTA State
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaDownlProg - Fota Download Progress
+type: int
+security: OEM
+nv: none
+
+Fota.FotaAllowResponse - Fota Allow Response
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaUserResponse - Fota User Response
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaPostponeTime - Fota Postpone Time
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaInstall - Fota Install
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaChkNow - Fota Check Now
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaChkAllow - Fota Check Allow User Init
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaChkStatus - Fota Check Status
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaChkTimeLeft - Fota Check Time Left
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaAutoDownload - Fota Auto Download
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaAutoSdm - Fota Auto SDM
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaDownlSize - Fota Download Size
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaMaxDownlSize - Fota max download size
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaStatusCode - Fota Status Code
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaRunSessionCnt - Fota Run Session Count
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaLastChkDate - Fota Last Check Date
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaTtlTimer - Fota Download TTL timer
+type: uint
+security: OEM
+nv: none
+
+Fota.WebupdaterEnable - Webupdater Enable
+type: uint
+security: OEM
+nv: none
+
+Fota.WebupdaterCheckNow - Webupdater Check Now
+type: uint
+security: OEM
+nv: none
+
+Fota.WebupdaterPeriod - Webupdater Period
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwDownAvail - FW available for download
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwIsDownloading - FW is downloading
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwInstallAvail - FW available for install
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwInstallCharger - Attach Charger for FW install
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwInstallPostponed - FW install has been postponed
+type: uint
+security: OEM
+nv: none
+
+Fota.AlertFwInstallNextReboot - FW install at next reboot
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaDisableFlashWrite - Fota Disable Flash Write
+type: bool
+security: OEM
+nv: none
+
+Fota.FotaWebUpdaterState - Fota WebUpdate State
+type: uint
+security: OEM
+nv: WU_STATE, apps
+
+Fota.UseSslMegaBundle - Use mega certificate bundle
+type: bool
+security: OEM
+nv: FOTA_USE_SSL_MEGA_BUNDLE, apps
+
+Fota.WUAutoCheck - WebUpdater Auto Check
+type: uint
+security: OEM
+nv: WU_AUTOCHECK, apps
+
+Fota.WUAutoDownload - WebUpdater Auto Download
+type: uint
+security: OEM
+nv: WU_AUTODOWNLOAD, apps
+
+Fota.WUAutoUpdate - WebUpdater Auto Update
+type: uint
+security: OEM
+nv: WU_AUTOUPDATE, apps
+
+Fota.WUAutoCheckRoam - WebUpdater Auto Check Roam
+type: uint
+security: OEM
+nv: WU_AUTOCHECK_ROAM, apps
+
+Fota.WUAutoDownloadRoam - WebUpdater Auto Download Roam
+type: uint
+security: OEM
+nv: WU_AUTODOWNLOAD_ROAM, apps
+
+Fota.WebupdaterErrCode - Webupdater Error Code
+type: uint
+security: OEM
+nv: WU_ERRCODE, apps
+
+Fota.WebupdaterErrDetail - Webupdater Error Detail
+type: string
+security: OEM
+nv: WU_ERRDETAIL, apps
+
+Fota.StartUpdate - Start firmware update 0=WU 1=Local FWU/TR-069
+type: uint
+security: OEM
+nv: none
+
+Fota.FotaBatteryLow - Fota Update Battery Low
+type: bool
+security: OEM
+nv: none
+
+Fota.FotaBusy - Fota session in progress
+type: bool
+security: OEM
+nv: none
+
+Fota.FotaDebug - Debug bit mask. default: 0xFFFFFFFF
+type: uint
+security: High
+nv: none
+
+Fota.FotaClearState - Clear workspace & state
+type: uint
+security: High
+nv: none
+
+
+
+GROUP: Board
+Board.UsbOtgState - USB OTG State
+type: enum - Undefined Host HostNoCharging Peripheral NoCable
+security: OEM
+nv: none
+
+Board.UsbChgType - USB Charger Type
+type: enum - None Wall Port Wireless QuickCharge
+security: OEM
+nv: none
+
+Board.Adc - ADC Reading
+type: uint
+security: OEM
+nv: none
+
+Board.USBDriverMode - USB Driver Mode
+type: enum - Gadget Host
+security: OEM
+nv: none
+
+Board.EthernetStatus - Ethernet Port Status
+type: enum - Disabled Enabled
+security: OEM
+nv: none
+
+Board.USBPMTestMode - USB PM Test Mode
+type: enum - Disabled Enabled
+security: OEM
+nv: none
+
+Board.ErrTest - Error Testing
+type: enum - None SoftwareAbort KernelPanic CodeException DataException
+security: OEM
+nv: none
+
+
+
+GROUP: HWsubsys
+HWsubsys.ETHphyEn - Ethernet PHY on/off
+type: uint
+security: OEM
+nv: HW_ETHPHY_ENABLE, apps
+
+HWsubsys.ETHdriverEn - Ethernet Driver on/off
+type: uint
+security: OEM
+nv: HW_ETHDRIVER_ENABLE, apps
+
+HWsubsys.ETHspeed - Ethernet speed
+type: enum - 10M 100M 1000M 2500M
+security: OEM
+nv: HW_ETHSPEED, apps
+
+HWsubsys.ETHspeedMax - Ethernet speed max
+type: enum - 10M 100M 1000M 2500M
+security: OEM
+nv: HW_ETHSPEED_MAX, apps
+
+HWsubsys.QPSchipEn - QPS chip Regulator on/off
+type: uint
+security: OEM
+nv: HW_QPS_ENABLE, apps
+
+HWsubsys.WCNchipEn - WCN chip Regulator on/off
+type: uint
+security: OEM
+nv: HW_WNC_ENABLE, apps
+
+HWsubsys.PCIeMode - PCIe bus max speed
+type: enum - Gen2 Gen3
+security: OEM
+nv: HW_PCIMODE, apps
+
+HWsubsys.NVUP - NVUP exist
+type: uint
+security: OEM
+nv: none
+
+
+
+GROUP: Oma
+Oma.DMAccountServerAddress1 - Svr addr for DM Account1
+type: string
+security: Low
+nv: IDS_DMACC_SERVER_ADDR_1, apps
+
+Oma.DMAccountServerPort1 - Svr port for DM Account1
+type: string
+security: Low
+nv: IDS_DMACC_SERVER_PORT_1, apps
+
+Oma.Test - Run OMA-DM Test. "<account_index>,<session_type>"
+type: string
+security: High
+nv: none
+
+Oma.VerizonConfigVersion - Verizon Configuration Version
+type: string
+security: High
+nv: IDS_CONFIG_VER, apps
+
+Oma.VerizonForceApnCheck - Verizon force DM session for (static IP) APN check
+type: bool
+security: High
+nv: IDS_VZW_FORCE_APN_CHECK, apps
+
+Oma.OverrideRoaming - Override Roaming
+type: bool
+security: High
+nv: OMA_OVERRIDE_ROAMING, apps
+
+Oma.ICCID - Previous ICCID for OMADM
+type: string
+security: High
+nv: OMA_ICCID, apps
+
+
+
+GROUP: Dsa
+Dsa.FirstAttemptSuccessCount - Number of successful first attempt
+type: uint
+security: Low
+nv: DSA_FIRST_ATTEMPT_SUCCESSS_COUNT, modem
+
+Dsa.SuccessAttemptCount - Number of successful attempts
+type: uint
+security: Low
+nv: DSA_SUCCESS_ATTEMPT_COUNT, modem
+
+Dsa.FailAttemptCount - Number of failed attempts
+type: uint
+security: Low
+nv: DSA_FAIL_ATTEMPT_COUNT, modem
+
+Dsa.TotalAttemptCount - Total number of attempts
+type: uint
+security: Low
+nv: DSA_TOTAL_ATTEMPT_COUNT, modem
+
+Dsa.PrepSuccessAttemptCount - Number of prep successful attempts
+type: uint
+security: Low
+nv: DSA_PREP_SUCCESS_ATTEMPT_COUNT, modem
+
+Dsa.PrepTotalAttemptCount - Number of prep total attempts
+type: uint
+security: Low
+nv: DSA_PREP_TOTAL_ATTEMPT_COUNT, modem
+
+Dsa.CounterControl - Control for clearing DSA counters
+type: enum - ClearAll
+security: Low
+nv: none
+
+Dsa.Enabled - DSA Enabled
+type: bool
+security: Low
+nv: DSA_ENABLE, apps
+
+Dsa.DSAServerAddr - DSA Server Address
+type: string
+security: Low
+nv: DSA_SERVER_ADDR, apps
+
+Dsa.DSAServerPort - DSA Server Port
+type: uint
+security: Low
+nv: DSA_SERVER_PORT, apps
+
+Dsa.DSAProxyAddr - DSA Proxy Address
+type: string
+security: Low
+nv: DSA_PROXY_ADDR, apps
+
+Dsa.DSAProxyPort - DSA Proxy Port
+type: uint
+security: Low
+nv: DSA_PROXY_PORT, apps
+
+Dsa.DSAOmaNode - OMA Node in DSA payload
+type: string
+security: High
+nv: none
+
+Dsa.DSAOmaUpdate - Update DSA OMA nodes
+type: uint
+security: Low
+nv: none
+
+
+
+GROUP: EvLog
+EvLog.Level - Event logging enable-mask: 1=Low, 2=Med, 4=High, 8=Error
+type: uint
+security: OEM
+nv: EVENT_LEVEL, apps
+
+EvLog.CurrentTime - Current timestamp (ms)
+type: uint64
+security: OEM
+nv: none
+
+EvLog.OldestFnum - Oldest file sequence number
+type: uint
+security: OEM
+nv: none
+
+EvLog.NewestFnum - Newest file sequence number
+type: uint
+security: OEM
+nv: none
+
+EvLog.LineList - Next line in Event Log
+type: string
+security: OEM
+nv: none
+
+EvLog.Clear - Clear event log
+type: uint
+security: OEM
+nv: none
+
+EvLog.CatLevel - Log category/level Configuration
+<category>,<enabled>,<message level mask>
+type: buffer
+security: Low
+nv: LOG_CAT
+
+EvLog.LogDuration - Log Duration in Seconds
+type: uint
+security: OEM
+nv: LOG_DURATION
+
+EvLog.TimeLastCleared - Timestamp (in secs) log was last cleared
+type: uint
+security: OEM
+nv: TIME_LAST_CLEARED
+
+
+
+GROUP: Ready
+Ready.ShareSupported - ReadyShare supported
+type: bool
+security: OEM
+nv: READYSHARE_SUPPORTED, apps
+
+Ready.ShareEnabled - ReadyShare enabled
+type: bool
+security: OEM
+nv: READYSHARE_ENABLED, apps
+
+Ready.CloudSupported - ReadyCloud supported
+type: bool
+security: OEM
+nv: READYCLOUD_SUPPORTED, apps
+
+Ready.CloudEnabled - ReadyCloud enabled
+type: bool
+security: OEM
+nv: READYCLOUD_ENABLED, apps
+
+Ready.RaSupported - Ready Agent Supported
+type: bool
+security: High
+nv: APPS_RA_SUPPORTED, apps
+
+Ready.RaEnabled - Ready Agent Enabled
+type: bool
+security: Low
+nv: APPS_RA_ENABLED, apps
+
+
+
+GROUP: DeviceShare
+DeviceShare.NetworkDeviceName - ReadyShare NW device name
+type: string
+security: OEM
+nv: READYSHARE_NWDEVICE_NAME, apps
+
+DeviceShare.WorkgroupName - ReadyShare workgroup name
+type: string
+security: OEM
+nv: READYSHARE_WORKGROUP, apps
+
+DeviceShare.UsbDevicesInfo - USB devices infrormation 
+ <Device name>,<volume name>,<file system type>,<total space>, <free space>
+type: buffer
+security: Low
+nv: none
+
+DeviceShare.RemoveUsbDevice - Remove USB device (by Device name)
+type: string
+security: Low
+nv: none
+
+DeviceShare.RemoveUsbDeviceResult - Remove USB device result
+type: enum - None Success Fail FailBusy
+security: Low
+nv: none
+
+DeviceShare.NwFoldersInfo - List of Network folders information.
+ <Device name>,<volume name>,<Share name>,<Read access>,<write access>,<folder name>,<media type>
+type: buffer
+security: Low
+nv: none
+
+DeviceShare.ExtMediaSupported - External Media Supported
+type: uint
+security: Low
+nv: EXT_MEDIA_SUPPORTED, apps
+
+DeviceShare.UsbDeviceRefresh - Storage device to refresh
+type: bool
+security: Low
+nv: none
+
+
+
+GROUP: Mediaserver
+Mediaserver.DlnaSupported - DLNA supported
+type: uint
+security: Low
+nv: DLNA_SUPPORTED, apps
+
+Mediaserver.DlnaEnabled - DLNA enabled/disabled
+type: uint
+security: Low
+nv: DLNA_ENABLED, apps
+
+Mediaserver.DlnaRescanFiles - Deletes database file & rescans
+type: uint
+security: Low
+nv: none
+
+Mediaserver.DlnaFriendlyName - DLNA server friendly name
+type: string
+security: Low
+nv: DLNA_FRIENDLY_NAME, apps
+
+
+
+GROUP: CaptivePortal
+CaptivePortal.Supported - Captive Portal Supported
+type: bool
+security: OEM
+nv: CAPTIVEPORTAL_SUPPORTED, apps
+
+CaptivePortal.Enabled - Captive Portal Enabled
+type: bool
+security: OEM
+nv: CAPTIVEPORTAL_ENABLED, apps
+
+CaptivePortal.ClientList - Client List
+<MAC>,<Source #>,<Next Action>,<Login Expire Timestamp>,<EULA expire Timestamp>
+type: buffer
+security: OEM
+nv: CAPTIVEPORTAL_CLIENT_LIST
+
+CaptivePortal.Rank - Login and EULA order
+type: bool
+security: OEM
+nv: CAPTIVEPORTAL_RANK, apps
+
+CaptivePortal.LoginEnabled - Login Enabled
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_LOGIN_ENABLED, apps
+
+CaptivePortal.Username - Login Username
+type: string
+security: High
+nv: CAPTIVEPORTAL_USERNAME, apps
+
+CaptivePortal.Password - Login Password
+type: string
+security: High
+nv: CAPTIVEPORTAL_PASSWORD, apps
+
+CaptivePortal.LoginTimeout - Login Timeout
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_LOGIN_TIMEOUT, apps
+
+CaptivePortal.MainEulaEnabled - Main Eula Enabled
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_EULA_ENABLED, apps
+
+CaptivePortal.MainEulaHost - Main Eula Host
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_EULA_HOST, apps
+
+CaptivePortal.MainEulaUrl - Main Eula URL
+type: string
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_EULA_URL, apps
+
+CaptivePortal.MainEulaTimeout - Main Eula Timeout
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_EULA_TIMEOUT, apps
+
+CaptivePortal.GuestEulaEnabled - Guest Eula Enabled
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_EULA_ENABLED, apps
+
+CaptivePortal.GuestEulaHost - Guest Eula Host
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_EULA_HOST, apps
+
+CaptivePortal.GuestEulaUrl - Guest Eula URL
+type: string
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_EULA_URL, apps
+
+CaptivePortal.GuestEulaTimeout - Guest Eula Timeout
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_EULA_TIMEOUT, apps
+
+CaptivePortal.MainRedirectEnabled - Main Redirect Enabled
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_REDIRECT_ENABLED, apps
+
+CaptivePortal.MainRedirectUrl - Main Redirect URL
+type: string
+security: OEM
+nv: CAPTIVEPORTAL_MAIN_REDIRECT_URL, apps
+
+CaptivePortal.GuestRedirectEnabled - Guest Redirect Enabled
+type: uint
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_REDIRECT_ENABLED, apps
+
+CaptivePortal.GuestRedirectUrl - Guest Redirect URL
+type: string
+security: OEM
+nv: CAPTIVEPORTAL_GUEST_REDIRECT_URL, apps
+
+CaptivePortal.CredentialInput - User Input Credential
+type: buffer
+security: High
+nv: none
+
+CaptivePortal.EulaAccepted - EULA is accepted
+type: buffer
+security: OEM
+nv: none
+
+
+
+GROUP: AccessControl
+AccessControl.NLPCSupported - NLPC supported
+type: bool
+security: OEM
+nv: ACCESSCONTROL_NLPC_SUPPORTED, apps
+
+AccessControl.NLPCEnabled - NLPC enabled
+type: bool
+security: OEM
+nv: ACCESSCONTROL_NLPC_ENABLED, apps
+
+AccessControl.NLPCMACList - NLPC MAC/DeviceID list
+type: buffer
+security: OEM
+nv: ACCESSCONTROL_NLPC_DEVMAP
+
+AccessControl.NLPCFilterLevel - NLPC default filter-level
+type: enum - None Minimal Low Moderate High Custom
+security: OEM
+nv: ACCESSCONTROL_NLPC_FILTER_LEVEL, apps
+
+AccessControl.NLPCDeviceKey - NLPC device-key
+type: string
+security: OEM
+nv: none
+
+AccessControl.NLPCUsername - NLPC username
+type: string
+security: OEM
+nv: ACCESSCONTROL_NLPC_USERNAME, apps
+
+AccessControl.NLPCPassword - NLPC password
+type: string
+security: OEM
+nv: ACCESSCONTROL_NLPC_PASSWORD, apps
+
+AccessControl.NLPCXferToken - NLPC transfer token
+type: string
+security: OEM
+nv: ACCESSCONTROL_NLPC_XFER_TOKEN, apps
+
+AccessControl.BlockSitesSupported - Block Sites supported
+type: bool
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_SUPPORTED, apps
+
+AccessControl.BlockSitesEnabled - Block Sites enabled
+type: bool
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_ENABLED, apps
+
+AccessControl.BlockSitesIPAddr - Block Sites redirect IP
+type: uint
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_IPADDR, apps
+
+AccessControl.BlockSitesMACMode - Block Sites MAC-mode
+type: enum - Blacklist Whitelist
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_MACMODE, apps
+
+AccessControl.BlockSitesPatternMode - Block Sites Pattern-mode
+type: enum - Blacklist Whitelist
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_PATTERNMODE, apps
+
+AccessControl.BlockSitesMACList - NLPC MAC list
+type: buffer
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_MACLIST
+
+AccessControl.BlockSitesPatternList - NLPC Pattern list
+type: buffer
+security: OEM
+nv: ACCESSCONTROL_BLKSTS_PATTERNLIST
+
+AccessControl.SchedulerSupported - scheduler Supported
+type: uint
+security: OEM
+nv: ACCESSCONTROL_SCHEDULER_SUPPORTED, apps
+
+AccessControl.SchedulerEnabled - scheduler Enabled
+type: uint
+security: OEM
+nv: ACCESSCONTROL_SCHEDULER_ENABLED, apps
+
+AccessControl.SchedulerDefaultMode - scheduler default mode
+type: enum - WwanOn WwanOff
+security: OEM
+nv: ACCESSCONTROL_SCHEDULER_DEFAULT_MODE, apps
+
+AccessControl.SchedulerList - scheduler list: <label>,<day>,<start time>,<scheduler period>
+type: buffer
+security: OEM
+nv: ACCESSCONTROL_SCHEDULER_LIST
+
+AccessControl.SchedulerBlockingActive - scheduler blocking active
+type: uint
+security: Low
+nv: none
+
+
+
+GROUP: Ethernet
+Ethernet.MAC - Ethernet MAC Address
+type: uint64
+security: OEM
+nv: ETHERNET_MAC, apps
+
+Ethernet.EthernetClientCnt - Ethernet client count
+type: uint
+security: OEM
+nv: none
+
+Ethernet.EthernetTetherSupported - Ethernet tethering support
+type: uint
+security: OEM
+nv: ETHERNET_TETHER_SUPPORTED, apps
+
+
+
+GROUP: EthOffload
+EthOffload.Supported - Ethernet offload supported
+type: uint
+security: OEM
+nv: ETH_OFFLOAD_SUPPORTED, apps
+
+EthOffload.Enabled - Ethernet offload enable
+type: uint
+security: OEM
+nv: ETH_OFFLOAD_ENABLED, apps
+
+EthOffload.On - Ethernet offload connection on
+type: uint
+security: OEM
+nv: none
+
+EthOffload.Ipv4Addr - IPV4 Address
+type: uint
+security: OEM
+nv: none
+
+EthOffload.Ipv6Addr - IPV6 Address
+type: string
+security: OEM
+nv: none
+
+EthOffload.Rx - Bytes received
+type: uint64
+security: OEM
+nv: none
+
+EthOffload.Tx - Bytes transmitted
+type: uint64
+security: OEM
+nv: none
+
+EthOffload.TimeOn - Timestamp when connection is on
+type: uint
+security: OEM
+nv: none
+
+
+
+GROUP: Insight
+Insight.Supported - Insight agent supported
+type: bool
+security: High
+nv: INSIGHT_SUPPORTED, apps
+
+Insight.Enabled - Insight agent enabled
+type: bool
+security: High
+nv: INSIGHT_ENABLED, apps
+
+Insight.Active - Insight management enabled
+type: bool
+security: High
+nv: INSIGHT_ACTIVE, apps
+
+Insight.Version - Version
+type: string
+security: High
+nv: none
+
+Insight.EnforcedListFile - File location of web symbol enforced list
+type: string
+security: High
+nv: none
+
+Insight.EnforcedListLoad - Load enforced list
+type: uint
+security: High
+nv: none
+
+Insight.DiagGenerate - Generate diagnostics file
+type: uint
+security: High
+nv: none
+
+Insight.DiagFile - File location of diagnostic file
+type: string
+security: High
+nv: none
+
+Insight.ProfileVersion - Profile version
+type: string
+security: High
+nv: INSIGHT_PROFILE_VER, apps
+
+Insight.DbgProcessStart - Start debug processes
+type: bool
+security: High
+nv: INSIGHT_DBG_PROCESS_START, apps
+
+Insight.ProcessStatus - Running status of processes
+type: enum - Unknown Running Standby Disabled Restarting Stopped
+security: High
+nv: none
+
+Insight.RunDuration - Time duration (s) to allow agent to run
+type: uint
+security: High
+nv: INSIGHT_RUN_DURATION, apps
+
+Insight.StandbyDuration - Time duration (s) for agent to be in standby
+type: uint
+security: High
+nv: INSIGHT_STANDBY_DURATION, apps
+
+Insight.AnonymousModeEnabled - Anonymous mode enabled
+type: bool
+security: High
+nv: INSIGHT_ANON_MODE_ENABLED, apps
+
+Insight.ExceptionList - Exception list
+type: string
+security: High
+nv: INSIGHT_EXCEPTION_LIST, apps
+
+Insight.Server - Cloud server to use: prod, beta, pri-dev, pri-qa, aux-dev, aux-qa, maint-dev, maint-qa, maint-beta, load, demo
+type: string
+security: High
+nv: INSIGHT_SERVER, apps
+
+Insight.DisallowIPv6ApnEnabled - Enable setting to not allow IPv6 APN
+type: bool
+security: High
+nv: INSIGHT_DISALLOW_IPV6_APN_ENABLED, apps
+
+Insight.DisallowIPv6Apn - Do not allow IPv6 APN
+type: bool
+security: High
+nv: 0, modem
+
+Insight.XaCarrierIdParam - Current carrier_id parameters used by xagent
+type: string
+security: High
+nv: none
+
