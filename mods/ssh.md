@@ -43,6 +43,10 @@ Follow instructions from https://github.com/binary-manu/static-cross-openssh, do
     -rwxr-xr-x    1 root     root        284092 Jan  6 03:38 sftp-server
     bash-3.2# ls -l /opt/openssh/var/empty/
     total 0
+    bash-3.2# which sftp
+   /bin/sftp
+   bash-3.2# which scp
+   /bin/scp
     ```
 
 1. Generate host keys with `ssh-keygen -A` command. Delete `ssh-keygen` after generating keys to save space
