@@ -17,7 +17,9 @@ No one wants to lose root access. Things to perserve
 * Firmware version. Meaning - disable auto update
 * Root telnet
 ### Disable update
-`dx` entry `Oma.DMAccountServerAddress1` is used as the server URL for auto update. Volue for stock ATT MR6500 is `https://xdm.wireless.att.com:443/oma`. The value is stored in NVRAM so flashing a firmware doesn't override it.
+`dx` entry `Oma.DMAccountServerAddress1` is used as the server URL for auto update. [Source](https://www.reddit.com/r/Dish5G/comments/10mqgzq/mr6400_firmware_warning/)
+
+Value for stock ATT MR6500 is `https://xdm.wireless.att.com:443/oma`. The value is stored in NVRAM so flashing a firmware doesn't override it.
 
 To disable auto update, set it to garbage or an empty string:
 ```bash
