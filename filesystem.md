@@ -68,26 +68,9 @@ bash-3.2# cat /sys/devices/virtual/ubi/ubi4/mtd_num
 
 Mount
 ```bash
-bash-3.2# mount
+bash-3.2# mount | grep -i "type ubifs"
 ubi0:rootfs on / type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=0)
-devtmpfs on /dev type devtmpfs (rw,relatime,size=310068k,nr_inodes=77517,mode=755)
-sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
-proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
-devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
-tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
-tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
-cgroup2 on /sys/fs/cgroup/unified type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate)
-cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
-cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
-cgroup on /sys/fs/cgroup/debug type cgroup (rw,nosuid,nodev,noexec,relatime,debug)
-cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
-cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
 ubi0:systemrw on /systemrw type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
-tmpfs on /var/volatile type tmpfs (rw,relatime)
-configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
-debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
-tmpfs on /tmp type tmpfs (rw,nosuid,nodev)
 ubi0:systemrw on /etc/data/mobileap_cfg.xml type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
 ubi0:usrfs on /data type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=1)
 ubi0:systemrw on /etc/data/mobileap_firewall.xml type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
@@ -104,10 +87,6 @@ ubi0:systemrw on /etc/adb_devid type ubifs (rw,relatime,bulk_read,assert=read-on
 ubi3:hdata on /mnt/hdata type ubifs (ro,relatime,sync,bulk_read,assert=read-only,ubi=3,vol=0)
 ubi0:systemrw on /etc/data/usb/softap_w_dun type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
 ubi2:userrw on /mnt/userrw type ubifs (rw,relatime,sync,bulk_read,assert=read-only,ubi=2,vol=0)
-adb on /dev/usb-ffs/adb type functionfs (rw,relatime)
-diag on /dev/ffs-diag type functionfs (rw,relatime)
-tracefs on /sys/kernel/debug/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
-/usr/web/lic.squash on /mnt/hdata/licenses type squashfs (ro,relatime)
 ubi0:cachefs on /cache type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=2)
 ubi0:systemrw on /etc/misc/ipq/ini/QCN9000.ini type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
 ubi0:systemrw on /etc/misc/ipq/ini/global.ini type ubifs (rw,relatime,bulk_read,assert=read-only,ubi=0,vol=3)
