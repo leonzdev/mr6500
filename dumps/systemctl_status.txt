@@ -1,0 +1,137 @@
+/ # systemctl status
+* sdxlemur
+    State: degraded
+     Jobs: 0 queued
+   Failed: 4 units
+    Since: Sat 1970-01-03 00:55:35 UTC; 10 years 0 months ago
+   CGroup: /
+           |-init.scope 
+           | `-1 /sbin/init
+           `-system.slice 
+             |-location_hal_daemon.service 
+             | `-1307 /usr/bin/location_hal_daemon
+             |-diag-reboot-app.service 
+             | `-1472 /usr/bin/diagrebootapp
+             |-tftp_server.service 
+             | `-300 /sbin/tftp_server
+             |-reboot-daemon.service 
+             | `-1158 /sbin/reboot-daemon
+             |-qmuxbridged.service 
+             | `-1113 /usr/bin/qmuxbridge
+             |-adbd.service 
+             | `-526 /sbin/adbd
+             |-thermal-engine.service 
+             | `-1832 /usr/bin/thermal-engine
+             |-QCMAP_ConnectionManagerd.service 
+             | `-585 /usr/bin/QCMAP_ConnectionManager /etc/data/mobileap_cfg.xml d
+             |-earlyinit-logd.service 
+             | `-552 /sbin/logd
+             |-netmgrd.service 
+             | `-298 /usr/bin/netmgrd
+             |-thermal_mitigation_batt_check.service 
+             | |- 1471 /bin/busybox.nosuid /bin/sh /usr/bin/thermal_mitigation_batt_check
+             | `-11600 /bin/busybox.nosuid /bin/sleep 10
+             |-system-qcmap_hostapd_cli.slice 
+             | `-qcmap_hostapd_cli@0.service 
+             |   `-3002 /usr/sbin/hostapd_cli -i wlan0 -s /var/run -p /var/run/hostapd -B -a /usr/bin/QCMAP_StaInterface
+             |-qseecomd.service 
+             | `-1197 /usr/bin/qseecomd
+             |-miniupnpd.service 
+             | `-2334 /usr/sbin/miniupnpd -f /etc/data/miniupnpd/miniupnpd.conf
+             |-qwesd.service 
+             | `-1252 /usr/bin/qwesd
+             |-system-dnsmasq_service.slice 
+             | `-dnsmasq_service@0.service 
+             |   `-2444 /usr/bin/dnsmasq --conf-file=/var/run/data/dnsmasq.conf.bridge0
+             |-dbus.service 
+             | `-540 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+             |-ninfod.service 
+             | `-1082 /sbin/ninfod -d
+             |-time_serviced.service 
+             | `-323 /usr/bin/time_daemon
+             |-loc_launcher.service 
+             | |-1303 /usr/bin/loc_launcher
+             | |-1403 lowi-server
+             | |-1405 xtra-daemon
+             | `-1406 edgnss-daemon
+             |-ipacm.service 
+             | `-583 /usr/bin/ipacm
+             |-system-serial\x2dgetty.slice 
+             | `-serial-getty@ttyMSM0.service 
+             |   `-1174 /sbin/agetty -8 -L ttyMSM0 115200 xterm
+             |-start_wlan_services.service 
+             | `-1280 wlan_services
+             |-system-getty.slice 
+             | `-getty@tty1.service 
+             |   `-1069 /sbin/agetty -o -p -- \x5cu --noclear tty1 linux
+             |-swiapp.service 
+             | |-  602 /bin/busybox.nosuid /bin/sh /usr/sbin/restart_swiapp
+             | |-  610 /usr/bin/swiapp
+             | |-  686 /bin/busybox.nosuid /usr/sbin/telnetd -l /bin/sh
+             | |-11601 /bin/busybox.nosuid /bin/sh
+             | |-11606 systemctl status
+             | |-11629 sshd: root@pts/0
+             | |-11637 /bin/busybox.nosuid /bin/sh
+             | |-11640 bash
+             | `-31693 sshd: /opt/openssh/bin/sshd [listener] 0 of 10-100 startups
+             |-webserver.service 
+             | |-544 /bin/busybox.nosuid /bin/sh /usr/sbin/restartNetgearWebApp
+             | `-553 /usr/bin/NetgearWebApp
+             |-qtid.service 
+             | `-1298 /usr/bin/qti
+             |-system-qcmap_hostapd.slice 
+             | `-qcmap_hostapd@0.service 
+             |   `-2608 /usr/sbin/hostapd -B /mnt/userrw/etc/hostapd.conf -P /var/run/data/hostapd_ssid1.pid -e /data/entropy_file
+             |-chg-policy.service 
+             | `-1053 /usr/bin/chg-policy
+             |-rdisc.service 
+             | `-1157 /sbin/rdisc -f -t
+             |-qrtr_ns.service 
+             | `-267 /usr/bin/qrtr-ns
+             |-systemd-udevd.service 
+             | |-320 /lib/systemd/systemd-udevd
+             | |-418 /lib/systemd/systemd-udevd
+             | |-419 /lib/systemd/systemd-udevd
+             | |-420 /lib/systemd/systemd-udevd
+             | |-421 /lib/systemd/systemd-udevd
+             | |-422 /lib/systemd/systemd-udevd
+             | |-426 /lib/systemd/systemd-udevd
+             | |-437 /lib/systemd/systemd-udevd
+             | |-442 /lib/systemd/systemd-udevd
+             | |-955 /lib/systemd/systemd-udevd
+             | `-956 /lib/systemd/systemd-udevd
+             |-port_bridge.service 
+             | `-1145 /usr/bin/port_bridge at_mdm0 at_usb0
+             |-qmi_ip_multiclientd.service 
+             | `-1107 /usr/bin/qmi_ip_multiclient /etc/data/qmi_ip_cfg.xml
+             |-busybox-syslog.service 
+             | `-1098 /bin/busybox.nosuid /sbin/syslogd
+             |-ipacmdiag.service 
+             | `-1520 /usr/bin/ipacmdiag
+             |-adpld.service 
+             | `-1241 /usr/bin/adpl
+             |-diag-router.service 
+             | `-506 /usr/bin/diag-router
+             |-atfwd.service 
+             | `-1044 /usr/bin/atfwd_daemon
+             |-xserver-nodm.service 
+             | |- 546 xinit /etc/X11/Xsession -- /usr/bin/Xorg :0 -br -pn -nocursor -r -ardelay 30000 -arinterval 30000 -nolisten tcp -nolisten unix
+             | |- 551 /usr/bin/Xorg :0 -br -pn -nocursor -r -ardelay 30000 -arinterval 30000 -nolisten tcp -nolisten unix
+             | |- 741 /bin/busybox.nosuid /bin/sh /etc/init.d/gui.sh
+             | |- 745 dbus-launch --sh-syntax --exit-with-session
+             | |- 746 /usr/bin/dbus-daemon --syslog --fork --print-pid 5 --print-address 7 --session
+             | |- 751 /usr/libexec/at-spi-bus-launcher --launch-immediately
+             | |- 757 /bin/busybox.nosuid /bin/sh /usr/sbin/restartGui
+             | |- 765 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+             | |- 991 /usr/bin/Gui /mnt/hdata/lcd/images/guibg3.png file:///mnt/hdata/lcd/intro.html?file:///mnt/hdata/lcd/index.html
+             | |-1024 /usr/libexec/webkit2gtk-4.0/WebKitNetworkProcess 3 15
+             | `-1030 /usr/libexec/webkit2gtk-4.0/WebKitWebProcess 8 15
+             |-usbd.service 
+             | `-1027 /usr/bin/usbd
+             |-atovertcp.service 
+             | |- 1058 /bin/busybox.nosuid /bin/sh /usr/bin/runatotcp.sh
+             | `-25665 /bin/busybox.nosuid /usr/bin/nc -l 192.168.3.1:5510
+             |-init_sys_mss.service 
+             | `-611 /sbin/init_mss
+             `-mbimd_nonopt.service 
+               `-1072 /usr/bin/mbimd
