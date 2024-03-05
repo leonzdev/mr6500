@@ -1,0 +1,67 @@
+# Filesystem
+Look into the system
+
+MTD
+```bash
+bash-3.2# cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00280000 00040000 "sbl"
+mtd1: 00280000 00040000 "mibib"
+mtd2: 01680000 00040000 "efs2"
+mtd3: 001c0000 00040000 "tz"
+mtd4: 00100000 00040000 "tz_devcfg"
+mtd5: 00180000 00040000 "ddr"
+mtd6: 00100000 00040000 "apdp"
+mtd7: 00100000 00040000 "xbl_config"
+mtd8: 00100000 00040000 "xbl_ramdump"
+mtd9: 00100000 00040000 "multi_image"
+mtd10: 00100000 00040000 "multi_image_qti"
+mtd11: 00100000 00040000 "aop"
+mtd12: 00100000 00040000 "qhee"
+mtd13: 00100000 00040000 "abl"
+mtd14: 00380000 00040000 "uefi"
+mtd15: 00180000 00040000 "toolsfv"
+mtd16: 00180000 00040000 "loader_sti"
+mtd17: 01280000 00040000 "boot"
+mtd18: 00100000 00040000 "scrub"
+mtd19: 00100000 00040000 "logfs"
+mtd20: 08040000 00040000 "modem"
+mtd21: 001c0000 00040000 "misc"
+mtd22: 00180000 00040000 "devinfo"
+mtd23: 00080000 00040000 "recovery"
+mtd24: 00080000 00040000 "fota"
+mtd25: 00080000 00040000 "recoveryfs"
+mtd26: 00100000 00040000 "sec"
+mtd27: 00100000 00040000 "ipa_fw"
+mtd28: 00100000 00040000 "usb_qti"
+mtd29: 12c80000 00040000 "system"
+mtd30: 034c0000 00040000 "pad1"
+mtd31: 02840000 00040000 "userrw"
+mtd32: 03940000 00040000 "hdata"
+mtd33: 008c0000 00040000 "cust"
+mtd34: 01040000 00040000 "ntgrpersist"
+mtd35: 15980000 00040000 "ntgfota"
+```
+
+UBI 
+```bash
+bash-3.2# ubinfo
+UBI version:                    1
+Count of UBI devices:           5
+UBI control device major/minor: 10:121
+Present UBI devices:            ubi0, ubi1, ubi2, ubi3, ubi4
+```
+
+UBI to MTD mapping
+```bash
+bash-3.2# cat /sys/devices/virtual/ubi/ubi0/mtd_num
+29
+bash-3.2# cat /sys/devices/virtual/ubi/ubi1/mtd_num
+20
+bash-3.2# cat /sys/devices/virtual/ubi/ubi2/mtd_num
+31
+bash-3.2# cat /sys/devices/virtual/ubi/ubi3/mtd_num
+32
+bash-3.2# cat /sys/devices/virtual/ubi/ubi4/mtd_num
+34
+```
