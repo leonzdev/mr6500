@@ -244,4 +244,5 @@ rw rootwait console=ttyMSM0,115200,n8 androidboot.hardware=qcom msm_rtb.filter=0
 
 ### Resources
 Mirrow for QPST and QXDM tools: https://mirrors.lolinet.com/software/windows/Qualcomm/
+
 Band enabling discussion: https://wirelessjoint.com/viewtopic.php?t=4119
