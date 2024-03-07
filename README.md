@@ -242,3 +242,6 @@ Linux sdxlemur 5.4.210-perf #1 PREEMPT Sat May 6 06:01:25 UTC 2023 armv7l GNU/Li
 rw rootwait console=ttyMSM0,115200,n8 androidboot.hardware=qcom msm_rtb.filter=0x237 androidboot.console=ttyMSM0 lpm_levels.sleep_disabled=1 firmware_class.path=/lib/firmware/updates service_locator.enable=1 net.ifnames=0 atlantic_fwd.rx_ring_size=512 atlantic_fwd.rx_linear=1 pcie_ports=compat pci=pcie_bus_perf rootfstype=ubifs rootflags=bulk_read root=ubi0:rootfs ubi.mtd=29 androidboot.serialno=xxxxxxxx androidboot.baseband=msm androidboot.force_normal_boot=1
 ```
 
+### Resources
+Mirrow for QPST and QXDM tools: https://mirrors.lolinet.com/software/windows/Qualcomm/
+Band enabling discussion: https://wirelessjoint.com/viewtopic.php?t=4119
