@@ -48,4 +48,11 @@ On many Qualcomm devices bands modification can be done by editing `carrier_poli
   * https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/
 
 However for MR6500, it seems that the restriction is coded in modem firmware
-  * 
+  * https://wirelessjoint.com/viewtopic.php?t=4119
+  * TODO: use QXDM to confirm
+    * https://xdaforums.com/t/guide-enabling-volte-vowifi-deprecated.4023529/post-81403537
+
+May need to reverse engineer the firmware(s) 
+  * Maybe helpful tools: https://github.com/mzakocs/qualcomm_baseband_scripts/blob/main/README.md
+  * https://research.checkpoint.com/2021/security-probe-of-qualcomm-msm/
+
