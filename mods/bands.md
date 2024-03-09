@@ -47,6 +47,9 @@ On many Qualcomm devices bands modification can be done by editing `carrier_poli
   * https://tech.ssut.me/qualcomm-modem-configuartion-mbn-with-carrier-policy-description/
   * https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/
 
+On MR6500 in EFS, `policyman/persisted_items/limited_bands` and `rat_mask` both contain the band masks. However, they are refreshed on reboot.
+  * https://xdaforums.com/t/guide-enabling-volte-vowifi-deprecated.4023529/post-81403537
+
 However for MR6500, it seems that the restriction is coded in modem firmware
   * https://wirelessjoint.com/viewtopic.php?t=4119
   * TODO: use QXDM to confirm
