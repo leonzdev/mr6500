@@ -42,3 +42,10 @@ at !band?
 Index, Name,         GW_Mask          LTE_1-64         LTE_65-128       NSA_1-64         NSA_65-128       NSA_257-320      SA_1-64          SA_65-128        SA_257-320       Mode
 00, 4G+5G,           0000000000000000 0000A0003000285F 0000000000000002 0000000030002812 0000000000001002 0000000000000008 0000000000000000 0000000000000000 0000000000000000 1
 ```
+
+On many Qualcomm devices bands modification can be done by editing `carrier_policy.xml` or other configuration files in EFS NV.
+  * https://tech.ssut.me/qualcomm-modem-configuartion-mbn-with-carrier-policy-description/
+  * https://mt-tech.fi/en/modify-oneplus-7-pro-5g-8-and-8-pro-nr-lte-a-band-combos/
+
+However for MR6500, it seems that the restriction is coded in modem firmware
+  * 
