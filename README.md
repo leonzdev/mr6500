@@ -246,5 +246,6 @@ rw rootwait console=ttyMSM0,115200,n8 androidboot.hardware=qcom msm_rtb.filter=0
 Mirrow for QPST and QXDM tools: https://mirrors.lolinet.com/software/windows/Qualcomm/
 
 QXDM5: https://mega.nz/folder/W3YV0IAD#43JFdo2uvM5ayCE7Seunhw
+  * XDA thread: https://xdaforums.com/t/qualcomm-qxdm5-qcat-pcat-qdart-qrct-tools.4296027/page-5 . May need to find password from the thread
 
 Band enabling discussion: https://wirelessjoint.com/viewtopic.php?t=4119
