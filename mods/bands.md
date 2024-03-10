@@ -56,6 +56,8 @@ However for MR6500, it seems that the restriction is coded in modem firmware
   * https://wirelessjoint.com/viewtopic.php?t=4119
   * TODO: use QXDM to confirm
     * https://xdaforums.com/t/guide-enabling-volte-vowifi-deprecated.4023529/post-81403537
+  * Resources on reverse qualcomm baseband firmware
+    * https://bkerler.github.io/2019/11/15/bring-light-to-the-darkness/
 
 May need to reverse engineer the firmware(s) 
   * Maybe helpful tools: https://github.com/mzakocs/qualcomm_baseband_scripts/blob/main/README.md
