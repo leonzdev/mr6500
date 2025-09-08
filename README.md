@@ -50,7 +50,7 @@ To workaround the limitations and gain root shell access, you can flash the MR65
 
 Guide: https://tinyurl.com/mrCONFIGTools
 
-Tool & firmware: https://tinyurl.com/MRToolKits
+Tool & firmware: ~~https://tinyurl.com/MRToolKits~~ https://mega.nz/folder/3R4nhQIZ#0te9-LiCWvizhp8M5ny7KA
 
 * Download `fdt` tool
 * Download firmware 
