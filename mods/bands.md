@@ -64,3 +64,26 @@ May need to reverse engineer the firmware(s)
   * Maybe helpful tools: https://github.com/mzakocs/qualcomm_baseband_scripts/blob/main/README.md
   * https://research.checkpoint.com/2021/security-probe-of-qualcomm-msm/
 
+## Update: investigated end-to-end, both TODOs above answered
+
+Full writeup: [`docs/band-unlock/`](../docs/band-unlock/README.md). Short version:
+
+- **"`limited_bands`/`rat_mask` refreshed on reboot, doubt it drives anything" — confirmed, by direct
+  experiment.** Patched n78 into `limited_bands` on raw NAND (`flash_erase`+`nandwrite` on
+  `/dev/mtd2`); it survived reboot and `policyman` read it, but **QMI DMS band capability (`0x0045`)
+  did not change.** It's a mirror of the live RF capability, not the source. →
+  [03](../docs/band-unlock/03-efs-limited-bands-experiment.md)
+- **"restriction is coded in modem firmware, TODO: use QXDM to confirm" — confirmed, without QXDM.**
+  Capability is computed live as `RFC (in the signed modem partition) ∩ RFNV cal`. Proved the RFC
+  can't be edited: flipped one inert padding byte in `/firmware/image/modem.b09`, and the modem
+  **refused to boot** (`pil_boot failed for modem` in dmesg) — secure boot verifies the image
+  signature on every load. Restored from backup, device fine again. →
+  [05](../docs/band-unlock/05-secure-boot-test.md)
+- RF-path analysis of the `modem` partition shows **n78 is physically reachable** (it's a subset of
+  n77, which this board already runs) but **n41/n71/n25 have no RF path on the mr6500 board at all**
+  — hardware-absent, not just disabled. → [04](../docs/band-unlock/04-rfc-band-viability.md)
+- **Net: not software-unlockable** on this AT&T unit; needs Qualcomm/Netgear's signing key, which
+  nobody has. The one untested idea with any theoretical legs — flashing a genuine MR6550's *signed*
+  modem image onto a 6500 to get n78 via the shared n77 path — is written up as a next step:
+  [07](../docs/band-unlock/07-mr6550-fsg-nextstep.md).
+

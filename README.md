@@ -249,3 +249,5 @@ QXDM5: https://mega.nz/folder/W3YV0IAD#43JFdo2uvM5ayCE7Seunhw
   * XDA thread: https://xdaforums.com/t/qualcomm-qxdm5-qcat-pcat-qdart-qrct-tools.4296027/page-5 . May need to find password from the thread
 
 Band enabling discussion: https://wirelessjoint.com/viewtopic.php?t=4119
+
+Band-lock investigation writeup (what gates the bands, why it's not software-unlockable on this AT&T unit, and the one untested next step): [docs/band-unlock/](docs/band-unlock/README.md)
